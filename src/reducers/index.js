@@ -1,37 +1,29 @@
 import { combineReducers } from 'redux'
-import {
-  SELECT_REDDIT, INVALIDATE_REDDIT,
-  REQUEST_POSTS, RECEIVE_POSTS
-} from '../actions'
+import { SELECT_REDDIT, REQUEST_POSTS, RECEIVE_POSTS } from '../actions'
 
-function selectedReddit(state = 'reactjs', action) {
+function selectedZone(state = {}, action) {
   switch (action.type) {
     case SELECT_REDDIT:
-      return action.reddit
+      return Object.assign({}, {
+        name: action.name
+      })
     default:
       return state
   }
 }
 
-function zones(state = {
+function zonesByGroup(state = {
   isFetching: false,
-  didInvalidate: false,
   items: []
 }, action) {
   switch (action.type) {
-    case INVALIDATE_REDDIT:
-      return Object.assign({}, state, {
-        didInvalidate: true
-      })
     case REQUEST_POSTS:
       return Object.assign({}, state, {
-        isFetching: true,
-        didInvalidate: false
+        isFetching: true
       })
     case RECEIVE_POSTS:
       return Object.assign({}, state, {
         isFetching: false,
-        didInvalidate: false,
         items: action.zones,
         lastUpdated: action.receivedAt
       })
@@ -40,22 +32,9 @@ function zones(state = {
   }
 }
 
-function postsByReddit(state = { }, action) {
-  switch (action.type) {
-    case INVALIDATE_REDDIT:
-    case RECEIVE_POSTS:
-    case REQUEST_POSTS:
-      return Object.assign({}, state, {
-        [action.reddit]: zones(state[action.reddit], action)
-      })
-    default:
-      return state
-  }
-}
-
 const rootReducer = combineReducers({
-  postsByReddit,
-  selectedReddit
+  zonesByGroup,
+  selectedZone
 })
 
 export default rootReducer

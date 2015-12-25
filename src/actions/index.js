@@ -3,44 +3,34 @@ import fetch from 'isomorphic-fetch'
 export const REQUEST_POSTS = 'REQUEST_POSTS'
 export const RECEIVE_POSTS = 'RECEIVE_POSTS'
 export const SELECT_REDDIT = 'SELECT_REDDIT'
-export const INVALIDATE_REDDIT = 'INVALIDATE_REDDIT'
 
-export function selectReddit(reddit) {
+export function selectZone(name) {
   return {
     type: SELECT_REDDIT,
-    reddit
+    name
   }
 }
 
-export function invalidateReddit(reddit) {
+function requestPosts() {
   return {
-    type: INVALIDATE_REDDIT,
-    reddit
+    type: REQUEST_POSTS
   }
 }
 
-function requestPosts(reddit) {
-  return {
-    type: REQUEST_POSTS,
-    reddit
-  }
-}
-
-function receivePosts(reddit, json) {
+function receivePosts(json) {
   return {
     type: RECEIVE_POSTS,
-    reddit: reddit,
     zones: json,
     receivedAt: Date.now()
   }
 }
 
-function fetchPosts(reddit) {
+function fetchPosts() {
   return dispatch => {
-    dispatch(requestPosts(reddit))
+    dispatch(requestPosts())
     return fetch(`http://xbmcs-mac-mini.local:5005/zones`)
       .then(response => response.json())
-      .then(json => dispatch(receivePosts(reddit, json)))
+      .then(json => dispatch(receivePosts(json)))
   }
 }
 
@@ -55,10 +45,10 @@ function shouldFetchZones(state) {
   return zones.didInvalidate
 }
 
-export function fetchPostsIfNeeded(reddit) {
+export function fetchPostsIfNeeded() {
   return (dispatch, getState) => {
-    if (shouldFetchZones(getState(), reddit)) {
-      return dispatch(fetchPosts(reddit))
+    if (shouldFetchZones(getState())) {
+      return dispatch(fetchPosts())
     }
   }
 }

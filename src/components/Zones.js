@@ -5,7 +5,12 @@ export default class Zones extends Component {
     return (
       <ul>
         {this.props.zones.map((zone, i) =>
-          <li key={i}>{zone.coordinator.roomName}</li>
+          <li
+            key={i}
+            onClick={() => this.props.onClick(zone.coordinator.roomName)}
+          >
+            {zone.coordinator.roomName}
+          </li>
         )}
       </ul>
     )
@@ -13,5 +18,5 @@ export default class Zones extends Component {
 }
 
 Zones.propTypes = {
-  posts: PropTypes.array.isRequired
+  zones: PropTypes.array.isRequired
 }

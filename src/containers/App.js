@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { selectReddit, fetchPostsIfNeeded, invalidateReddit } from '../actions'
-import Picker from '../components/Picker'
+import { selectZone, fetchPostsIfNeeded } from '../actions'
 import Zones from '../components/Zones'
 
 class App extends Component {
@@ -12,36 +11,28 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const { dispatch, selectedReddit } = this.props
-    dispatch(fetchPostsIfNeeded(selectedReddit))
+    const { dispatch } = this.props
+    dispatch(fetchPostsIfNeeded())
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.selectedReddit !== this.props.selectedReddit) {
-      const { dispatch, selectedReddit } = nextProps
-      dispatch(fetchPostsIfNeeded(selectedReddit))
-    }
-  }
-
-  handleChange(nextReddit) {
-    this.props.dispatch(selectReddit(nextReddit))
+  handleChange(name) {
+    this.props.dispatch(selectZone(name))
   }
 
   handleRefreshClick(e) {
     e.preventDefault()
 
-    const { dispatch, selectedReddit } = this.props
-    dispatch(invalidateReddit(selectedReddit))
-    dispatch(fetchPostsIfNeeded(selectedReddit))
+    const { dispatch } = this.props
+    dispatch(fetchPostsIfNeeded())
   }
 
   render() {
-    const { selectedReddit, zones, isFetching, lastUpdated } = this.props
+    const { selectedZone, zones, isFetching, lastUpdated } = this.props
     return (
       <div>
-        <Picker value={selectedReddit}
-                onChange={this.handleChange}
-                options={[ 'reactjs', 'frontend' ]} />
+        {selectedZone &&
+          <h2>{selectedZone.name}</h2>
+        }
         <p>
           {lastUpdated &&
             <span>
@@ -64,7 +55,7 @@ class App extends Component {
         }
         {zones.length > 0 &&
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>
-            <Zones zones={zones} />
+            <Zones zones={zones} onClick={this.handleChange} />
           </div>
         }
       </div>
@@ -73,30 +64,32 @@ class App extends Component {
 }
 
 App.propTypes = {
-  selectedReddit: PropTypes.string.isRequired,
-  zones: PropTypes.array.isRequired,
+  selectedZone: PropTypes.object.isRequired,
+  zones: PropTypes.object.isRequired,
   isFetching: PropTypes.bool.isRequired,
   lastUpdated: PropTypes.number,
   dispatch: PropTypes.func.isRequired
 }
 
 function mapStateToProps(state) {
-  const { selectedReddit, postsByReddit } = state
+  const { selectedZone, zonesByGroup } = state
   const {
     isFetching,
     lastUpdated,
     items: zones
-  } = postsByReddit[selectedReddit] || {
+  } = zonesByGroup || {
     isFetching: true,
     items: []
   }
 
   return {
-    selectedReddit,
+    selectedZone,
     zones,
     isFetching,
     lastUpdated
   }
+
+  return state
 }
 
 export default connect(mapStateToProps)(App)
