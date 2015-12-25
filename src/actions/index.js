@@ -30,7 +30,7 @@ function receivePosts(reddit, json) {
   return {
     type: RECEIVE_POSTS,
     reddit: reddit,
-    posts: json.data.children.map(child => child.data),
+    posts: json,
     receivedAt: Date.now()
   }
 }
@@ -38,14 +38,14 @@ function receivePosts(reddit, json) {
 function fetchPosts(reddit) {
   return dispatch => {
     dispatch(requestPosts(reddit))
-    return fetch(`http://www.reddit.com/r/${reddit}.json`)
+    return fetch(`http://xbmcs-mac-mini.local:5005/zones`)
       .then(response => response.json())
       .then(json => dispatch(receivePosts(reddit, json)))
   }
 }
 
-function shouldFetchPosts(state, reddit) {
-  const posts = state.postsByReddit[reddit]
+function shouldFetchPosts(state) {
+  const posts = state.posts
   if (!posts) {
     return true
   }
