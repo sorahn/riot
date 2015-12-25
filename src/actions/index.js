@@ -38,8 +38,7 @@ function receivePosts(json) {
 function receiveFavorites(json) {
   return {
     type: RECEIVE_FAVORITES,
-    favorites: json,
-    receivedAt: Date.now()
+    favorites: json
   }
 }
 
@@ -61,25 +60,23 @@ function fetchFavorites() {
   }
 }
 
-function shouldFetchZones(state) {
-  const zones = state.zones
-  if (!zones) {
+function shouldFetchZones({zonesByGroup: {zones}}) {
+  if (!zones.length) {
     return true
   }
 
   return false
 }
 
-function shouldFetchFavorites(state) {
-  const favorites = state.favorites
-  if (!favorites) {
+function shouldFetchFavorites({availableFavorites: {favorites}}) {
+  if (!favorites.length) {
     return true
   }
 
   return false
 }
 
-export function fetchPostsIfNeeded() {
+export function fetchZonesIfNeeded() {
   return (dispatch, getState) => {
     if (shouldFetchZones(getState())) {
       return dispatch(fetchPosts())

@@ -1,4 +1,5 @@
 export const initialState = {
   isFetching: true,
-  zones: []
+  selectedZone: '',
+  zones: [],
 }

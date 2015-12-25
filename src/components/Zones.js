@@ -14,6 +14,14 @@ export default class Zones extends Component {
     this.props.dispatch(selectZone(name))
   }
 
+  titleOrTV(currentTrack) {
+    if (/spdif/.test(currentTrack.uri)) {
+      return 'TV'
+    }
+
+    return currentTrack.title
+  }
+
   render() {
     return (
       <divl>
@@ -22,7 +30,17 @@ export default class Zones extends Component {
             key={coordinator.uuid}
             header={<h3>{coordinator.roomName}</h3>}
             onClick={() => this.handleClick(coordinator.roomName)}
-            footer={<Icon name={stateMap[coordinator.state.zoneState]} />}
+            footer={
+              <div style={{
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                whiteSpace: 'nowrap'
+              }}>
+                <Icon name={stateMap[coordinator.state.zoneState]} />
+                <strong>&nbsp; - &nbsp;</strong>
+                {this.titleOrTV(coordinator.state.currentTrack)}
+              </div>
+            }
           >
             <ListGroup>
               {members.map(member =>

@@ -1,8 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { fetchPostsIfNeeded } from '../actions'
+import { fetchZonesIfNeeded, fetchFavoritesIfNeeded } from '../actions'
 import Zones from '../components/Zones'
-import { initialState } from '../constants'
 import { Grid, Col, Navbar } from 'react-bootstrap'
 
 class App extends Component {
@@ -12,18 +11,19 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(fetchPostsIfNeeded())
+    this.props.dispatch(fetchZonesIfNeeded())
+    this.props.dispatch(fetchFavoritesIfNeeded())
   }
 
   handleRefreshClick(e) {
     e.preventDefault()
 
     const { dispatch } = this.props
-    dispatch(fetchPostsIfNeeded())
+    dispatch(fetchZonesIfNeeded())
   }
 
   render() {
-    const { selectedZone, zones, isFetching } = this.props
+    const { selectedZone, zones, isFetching, isFetchingFavorites, favorites } = this.props
     return (
       <main>
         <Navbar staticTop>
@@ -48,6 +48,17 @@ class App extends Component {
               <h2>{selectedZone.name}</h2>
             }
           </Col>
+          <Col sm={4}>
+            {isFetchingFavorites && favorites.length === 0 &&
+              <h2>Loading...</h2>
+            }
+            {!isFetchingFavorites && favorites.length === 0 &&
+              <h2>Empty.</h2>
+            }
+            {favorites.length > 0 && favorites.map((favorite, i) =>
+              <li key={i}>{favorite}</li>
+            )}
+          </Col>
         </Grid>
       </main>
     )
@@ -63,14 +74,17 @@ App.propTypes = {
 }
 
 function mapStateToProps(state) {
-  const { selectedZone, zonesByGroup } = state
-  const { isFetching, lastUpdated, zones } = zonesByGroup || initialState
+  const { selectedZone, zonesByGroup, availableFavorites } = state
+  const { isFetching, isFetchingFavorites, lastUpdated, zones } = zonesByGroup
+  const { favorites } = availableFavorites
 
   return {
     selectedZone,
     zones,
     isFetching,
-    lastUpdated
+    isFetchingFavorites,
+    lastUpdated,
+    favorites
   }
 
   return state
