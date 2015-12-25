@@ -36,7 +36,7 @@ class App extends Component {
   }
 
   render() {
-    const { selectedReddit, posts, isFetching, lastUpdated } = this.props
+    const { selectedReddit, zones, isFetching, lastUpdated } = this.props
     return (
       <div>
         <Picker value={selectedReddit}
@@ -56,15 +56,15 @@ class App extends Component {
             </a>
           }
         </p>
-        {isFetching && posts.length === 0 &&
+        {isFetching && zones.length === 0 &&
           <h2>Loading...</h2>
         }
-        {!isFetching && posts.length === 0 &&
+        {!isFetching && zones.length === 0 &&
           <h2>Empty.</h2>
         }
-        {posts.length > 0 &&
+        {zones.length > 0 &&
           <div style={{ opacity: isFetching ? 0.5 : 1 }}>
-            <Zones zones={posts} />
+            <Zones zones={zones} />
           </div>
         }
       </div>
@@ -74,7 +74,7 @@ class App extends Component {
 
 App.propTypes = {
   selectedReddit: PropTypes.string.isRequired,
-  posts: PropTypes.array.isRequired,
+  zones: PropTypes.array.isRequired,
   isFetching: PropTypes.bool.isRequired,
   lastUpdated: PropTypes.number,
   dispatch: PropTypes.func.isRequired
@@ -85,7 +85,7 @@ function mapStateToProps(state) {
   const {
     isFetching,
     lastUpdated,
-    items: posts
+    items: zones
   } = postsByReddit[selectedReddit] || {
     isFetching: true,
     items: []
@@ -93,7 +93,7 @@ function mapStateToProps(state) {
 
   return {
     selectedReddit,
-    posts,
+    zones,
     isFetching,
     lastUpdated
   }

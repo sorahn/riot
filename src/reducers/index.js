@@ -13,7 +13,7 @@ function selectedReddit(state = 'reactjs', action) {
   }
 }
 
-function posts(state = {
+function zones(state = {
   isFetching: false,
   didInvalidate: false,
   items: []
@@ -32,7 +32,7 @@ function posts(state = {
       return Object.assign({}, state, {
         isFetching: false,
         didInvalidate: false,
-        items: action.posts,
+        items: action.zones,
         lastUpdated: action.receivedAt
       })
     default:
@@ -46,7 +46,7 @@ function postsByReddit(state = { }, action) {
     case RECEIVE_POSTS:
     case REQUEST_POSTS:
       return Object.assign({}, state, {
-        [action.reddit]: posts(state[action.reddit], action)
+        [action.reddit]: zones(state[action.reddit], action)
       })
     default:
       return state

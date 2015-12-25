@@ -30,7 +30,7 @@ function receivePosts(reddit, json) {
   return {
     type: RECEIVE_POSTS,
     reddit: reddit,
-    posts: json,
+    zones: json,
     receivedAt: Date.now()
   }
 }
@@ -44,20 +44,20 @@ function fetchPosts(reddit) {
   }
 }
 
-function shouldFetchPosts(state) {
-  const posts = state.posts
-  if (!posts) {
+function shouldFetchZones(state) {
+  const zones = state.zones
+  if (!zones) {
     return true
   }
-  if (posts.isFetching) {
+  if (zones.isFetching) {
     return false
   }
-  return posts.didInvalidate
+  return zones.didInvalidate
 }
 
 export function fetchPostsIfNeeded(reddit) {
   return (dispatch, getState) => {
-    if (shouldFetchPosts(getState(), reddit)) {
+    if (shouldFetchZones(getState(), reddit)) {
       return dispatch(fetchPosts(reddit))
     }
   }
