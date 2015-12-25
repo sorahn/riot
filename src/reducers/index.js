@@ -8,6 +8,14 @@ function selectedZone(state = {}, action) {
       return Object.assign({}, {
         name: action.name
       })
+    case RECEIVE_ZONES:
+      if (state.name) {
+        return state
+      }
+
+      return Object.assign({}, {
+        name: action.zones[0].coordinator.roomName
+      })
     default:
       return state
   }
