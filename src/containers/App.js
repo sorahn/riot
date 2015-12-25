@@ -2,7 +2,9 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { fetchZonesIfNeeded, fetchFavoritesIfNeeded } from '../actions'
 import Zones from '../components/Zones'
-import { Grid, Col, Navbar } from 'react-bootstrap'
+import Favorites from '../components/Favorites'
+
+import { Grid, Col, Navbar, Panel } from 'react-bootstrap'
 
 class App extends Component {
   constructor(props) {
@@ -33,31 +35,37 @@ class App extends Component {
         </Navbar>
         <Grid>
           <Col sm={4}>
-            {isFetching && zones.length === 0 &&
-              <h2>Loading...</h2>
-            }
-            {!isFetching && zones.length === 0 &&
-              <h2>Empty.</h2>
-            }
-            {zones.length > 0 &&
-              <Zones zones={zones} />
-            }
+            <Panel header={<h3>Rooms</h3>} bsStyle="primary">
+              {isFetching && zones.length === 0 &&
+                <h2>Loading...</h2>
+              }
+              {!isFetching && zones.length === 0 &&
+                <h2>Empty.</h2>
+              }
+              {zones.length > 0 &&
+                <Zones zones={zones} />
+              }
+            </Panel>
           </Col>
           <Col sm={4}>
-            {selectedZone &&
-              <h2>{selectedZone.name}</h2>
-            }
+            <Panel header={<h3>Now Playing</h3>} bsStyle="primary">
+              {selectedZone &&
+                <h2>{selectedZone.name}</h2>
+              }
+            </Panel>
           </Col>
           <Col sm={4}>
-            {isFetchingFavorites && favorites.length === 0 &&
-              <h2>Loading...</h2>
-            }
-            {!isFetchingFavorites && favorites.length === 0 &&
-              <h2>Empty.</h2>
-            }
-            {favorites.length > 0 && favorites.map((favorite, i) =>
-              <li key={i}>{favorite}</li>
-            )}
+            <Panel header={<h3>Favorites</h3>} bsStyle="primary">
+              {isFetchingFavorites && favorites.length === 0 &&
+                <h2>Loading...</h2>
+              }
+              {!isFetchingFavorites && favorites.length === 0 &&
+                <h2>Empty.</h2>
+              }
+              {favorites.length > 0 &&
+                <Favorites favorites={favorites} />
+              }
+            </Panel>
           </Col>
         </Grid>
       </main>

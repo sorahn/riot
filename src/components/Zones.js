@@ -24,7 +24,7 @@ export default class Zones extends Component {
 
   render() {
     return (
-      <divl>
+      <div>
         {this.props.zones.map(({coordinator, members}) =>
           <Panel
             key={coordinator.uuid}
@@ -49,7 +49,7 @@ export default class Zones extends Component {
             </ListGroup>
           </Panel>
         )}
-      </divl>
+      </div>
     )
   }
 }
