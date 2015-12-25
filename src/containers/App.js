@@ -1,23 +1,18 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { selectZone, fetchPostsIfNeeded } from '../actions'
+import { fetchPostsIfNeeded } from '../actions'
 import Zones from '../components/Zones'
 import { initialState } from '../constants'
+import { Grid, Col, Navbar } from 'react-bootstrap'
 
 class App extends Component {
   constructor(props) {
     super(props)
-    this.handleChange = this.handleChange.bind(this)
     this.handleRefreshClick = this.handleRefreshClick.bind(this)
   }
 
   componentDidMount() {
-    const { dispatch } = this.props
-    dispatch(fetchPostsIfNeeded())
-  }
-
-  handleChange(name) {
-    this.props.dispatch(selectZone(name))
+    this.props.dispatch(fetchPostsIfNeeded())
   }
 
   handleRefreshClick(e) {
@@ -28,38 +23,33 @@ class App extends Component {
   }
 
   render() {
-    const { selectedZone, zones, isFetching, lastUpdated } = this.props
+    const { selectedZone, zones, isFetching } = this.props
     return (
-      <div>
-        {selectedZone &&
-          <h2>{selectedZone.name}</h2>
-        }
-        <p>
-          {lastUpdated &&
-            <span>
-              Last updated at {new Date(lastUpdated).toLocaleTimeString()}.
-              {' '}
-            </span>
-          }
-          {!isFetching &&
-            <a href="#"
-               onClick={this.handleRefreshClick}>
-              Refresh
-            </a>
-          }
-        </p>
-        {isFetching && zones.length === 0 &&
-          <h2>Loading...</h2>
-        }
-        {!isFetching && zones.length === 0 &&
-          <h2>Empty.</h2>
-        }
-        {zones.length > 0 &&
-          <div style={{ opacity: isFetching ? 0.5 : 1 }}>
-            <Zones zones={zones} onClick={this.handleChange} />
-          </div>
-        }
-      </div>
+      <main>
+        <Navbar staticTop>
+          <Navbar.Header>
+            <Navbar.Brand>RIOT</Navbar.Brand>
+          </Navbar.Header>
+        </Navbar>
+        <Grid>
+          <Col sm={4}>
+            {isFetching && zones.length === 0 &&
+              <h2>Loading...</h2>
+            }
+            {!isFetching && zones.length === 0 &&
+              <h2>Empty.</h2>
+            }
+            {zones.length > 0 &&
+              <Zones zones={zones} />
+            }
+          </Col>
+          <Col sm={4}>
+            {selectedZone &&
+              <h2>{selectedZone.name}</h2>
+            }
+          </Col>
+        </Grid>
+      </main>
     )
   }
 }

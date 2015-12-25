@@ -2,7 +2,11 @@ import fetch from 'isomorphic-fetch'
 
 export const REQUEST_ZONES = 'REQUEST_ZONES'
 export const RECEIVE_ZONES = 'RECEIVE_ZONES'
+export const REQUEST_FAVORITES = 'REQUEST_FAVORITES'
+export const RECEIVE_FAVORITES = 'RECEIVE_FAVORITES'
 export const SELECT_ZONE = 'SELECT_ZONE'
+
+const SONOS_API = 'http://xbmcs-mac-mini.local:5005'
 
 export function selectZone(name) {
   return {
@@ -17,6 +21,12 @@ function requestPosts() {
   }
 }
 
+function requestFavorites() {
+  return {
+    type: REQUEST_FAVORITES
+  }
+}
+
 function receivePosts(json) {
   return {
     type: RECEIVE_ZONES,
@@ -25,12 +35,29 @@ function receivePosts(json) {
   }
 }
 
+function receiveFavorites(json) {
+  return {
+    type: RECEIVE_FAVORITES,
+    favorites: json,
+    receivedAt: Date.now()
+  }
+}
+
 function fetchPosts() {
   return dispatch => {
     dispatch(requestPosts())
-    return fetch(`http://xbmcs-mac-mini.local:5005/zones`)
+    return fetch(`${SONOS_API}/zones`)
       .then(response => response.json())
       .then(json => dispatch(receivePosts(json)))
+  }
+}
+
+function fetchFavorites() {
+  return dispatch => {
+    dispatch(requestFavorites())
+    return fetch(`${SONOS_API}/favorites`)
+      .then(response => response.json())
+      .then(json => dispatch(receiveFavorites(json)))
   }
 }
 
@@ -39,16 +66,31 @@ function shouldFetchZones(state) {
   if (!zones) {
     return true
   }
-  if (zones.isFetching) {
-    return false
+
+  return false
+}
+
+function shouldFetchFavorites(state) {
+  const favorites = state.favorites
+  if (!favorites) {
+    return true
   }
-  return zones.didInvalidate
+
+  return false
 }
 
 export function fetchPostsIfNeeded() {
   return (dispatch, getState) => {
     if (shouldFetchZones(getState())) {
       return dispatch(fetchPosts())
+    }
+  }
+}
+
+export function fetchFavoritesIfNeeded() {
+  return (dispatch, getState) => {
+    if (shouldFetchFavorites(getState())) {
+      return dispatch(fetchFavorites())
     }
   }
 }
