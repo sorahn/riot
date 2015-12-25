@@ -1,25 +1,25 @@
 import fetch from 'isomorphic-fetch'
 
-export const REQUEST_POSTS = 'REQUEST_POSTS'
-export const RECEIVE_POSTS = 'RECEIVE_POSTS'
-export const SELECT_REDDIT = 'SELECT_REDDIT'
+export const REQUEST_ZONES = 'REQUEST_ZONES'
+export const RECEIVE_ZONES = 'RECEIVE_ZONES'
+export const SELECT_ZONE = 'SELECT_ZONE'
 
 export function selectZone(name) {
   return {
-    type: SELECT_REDDIT,
+    type: SELECT_ZONE,
     name
   }
 }
 
 function requestPosts() {
   return {
-    type: REQUEST_POSTS
+    type: REQUEST_ZONES
   }
 }
 
 function receivePosts(json) {
   return {
-    type: RECEIVE_POSTS,
+    type: RECEIVE_ZONES,
     zones: json,
     receivedAt: Date.now()
   }

@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux'
-import { SELECT_REDDIT, REQUEST_POSTS, RECEIVE_POSTS } from '../actions'
+import { SELECT_ZONE, REQUEST_ZONES, RECEIVE_ZONES } from '../actions'
+import { initialState } from '../constants'
 
 function selectedZone(state = {}, action) {
   switch (action.type) {
-    case SELECT_REDDIT:
+    case SELECT_ZONE:
       return Object.assign({}, {
         name: action.name
       })
@@ -12,19 +13,16 @@ function selectedZone(state = {}, action) {
   }
 }
 
-function zonesByGroup(state = {
-  isFetching: false,
-  items: []
-}, action) {
+function zonesByGroup(state = initialState, action) {
   switch (action.type) {
-    case REQUEST_POSTS:
+    case REQUEST_ZONES:
       return Object.assign({}, state, {
         isFetching: true
       })
-    case RECEIVE_POSTS:
+    case RECEIVE_ZONES:
       return Object.assign({}, state, {
         isFetching: false,
-        items: action.zones,
+        zones: action.zones,
         lastUpdated: action.receivedAt
       })
     default:

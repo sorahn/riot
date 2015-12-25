@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { selectZone, fetchPostsIfNeeded } from '../actions'
 import Zones from '../components/Zones'
+import { initialState } from '../constants'
 
 class App extends Component {
   constructor(props) {
@@ -65,7 +66,7 @@ class App extends Component {
 
 App.propTypes = {
   selectedZone: PropTypes.object.isRequired,
-  zones: PropTypes.object.isRequired,
+  zones: PropTypes.array.isRequired,
   isFetching: PropTypes.bool.isRequired,
   lastUpdated: PropTypes.number,
   dispatch: PropTypes.func.isRequired
@@ -73,14 +74,7 @@ App.propTypes = {
 
 function mapStateToProps(state) {
   const { selectedZone, zonesByGroup } = state
-  const {
-    isFetching,
-    lastUpdated,
-    items: zones
-  } = zonesByGroup || {
-    isFetching: true,
-    items: []
-  }
+  const { isFetching, lastUpdated, zones } = zonesByGroup || initialState
 
   return {
     selectedZone,
