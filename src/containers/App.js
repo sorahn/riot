@@ -35,8 +35,8 @@ class App extends Component {
             { /* if there are zones, but not a selectedZone, dispatch seletZone[0] */ }
 
             <Panel header={<h3>Now Playing</h3>} bsStyle="primary">
-              {selectedZone.name &&
-                <h2>{selectedZone.name}</h2>
+              {selectedZone &&
+                <h2>{selectedZone}</h2>
               }
             </Panel>
           </Col>

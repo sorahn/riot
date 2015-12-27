@@ -10,14 +10,16 @@ const stateMap = {
 
 export default class Zone extends Component {
   render() {
-    const { hovering, zone: { coordinator, members }} = this.props
+    const { hovering, selected, zone: { coordinator, members }} = this.props
     const track = /spdif/.test(coordinator.state.currentTrack.uri) ? 'TV' : coordinator.state.currentTrack.title
     const ellipsis = {
       overflow: 'hidden',
       textOverflow: 'ellipsis',
       whiteSpace: 'nowrap'
     }
-    const bsStyle = hovering === coordinator.roomName ? 'info' : 'default'
+
+    let bsStyle = selected === coordinator.roomName ? 'success' : 'default'
+    bsStyle = hovering === coordinator.roomName ? 'info' : bsStyle
 
     return (
       <Panel

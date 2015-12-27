@@ -15,7 +15,7 @@ export class Rooms extends React.Component {
   }
 
   render() {
-    const { isFetching, zones, dispatch, hoveredZone } = this.props
+    const { isFetching, zones, dispatch } = this.props
 
     return (
       <Panel header={<h3>Rooms</h3>} bsStyle="primary">
@@ -33,7 +33,8 @@ export class Rooms extends React.Component {
             handleClick={() => dispatch(selectZone(zone.coordinator.roomName))}
             handleMouseEnter={() => dispatch(hoverZone(zone.coordinator.roomName))}
             handleMouseLeave={() => dispatch(hoverOffZone(zone.coordinator.roomName))}
-            hovering={hoveredZone.name}
+            hovering={this.props.hoveredZone}
+            selected={this.props.selectedZone}
             key={zone.coordinator.uuid} />
         )}
       </Panel>
@@ -46,12 +47,13 @@ Rooms.propTypes = {
 }
 
 function mapStateToProps(state) {
-  const { hoveredZone, zonesByGroup: { zones, isFetching } } = state
+  const { selectedZone, hoveredZone, zonesByGroup: { zones, isFetching } } = state
 
   return {
     isFetching,
     zones,
-    hoveredZone
+    hoveredZone,
+    selectedZone
   }
 }
 
