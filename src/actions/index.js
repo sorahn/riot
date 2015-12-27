@@ -5,29 +5,32 @@ export const RECEIVE_ZONES = 'RECEIVE_ZONES'
 export const REQUEST_FAVORITES = 'REQUEST_FAVORITES'
 export const RECEIVE_FAVORITES = 'RECEIVE_FAVORITES'
 export const SELECT_ZONE = 'SELECT_ZONE'
+export const HOVER_ZONE = 'HOVER_ZONE'
+export const HOVER_OFF_ZONE = 'HOVER_OFF_ZONE'
 
 const SONOS_API = 'http://xbmcs-mac-mini.local:5005'
 
 export function selectZone(name) {
-  return {
-    type: SELECT_ZONE,
-    name
-  }
+  return { type: SELECT_ZONE, name }
 }
 
-function requestPosts() {
-  return {
-    type: REQUEST_ZONES
-  }
+export function hoverZone(name) {
+  return { type: HOVER_ZONE, name }
+}
+
+export function hoverOffZone(name) {
+  return { type: HOVER_OFF_ZONE, name }
+}
+
+function requestZones() {
+  return { type: REQUEST_ZONES }
 }
 
 function requestFavorites() {
-  return {
-    type: REQUEST_FAVORITES
-  }
+  return { type: REQUEST_FAVORITES }
 }
 
-function receivePosts(json) {
+function receiveZones(json) {
   return {
     type: RECEIVE_ZONES,
     zones: json,
@@ -44,10 +47,10 @@ function receiveFavorites(json) {
 
 function fetchPosts() {
   return dispatch => {
-    dispatch(requestPosts())
+    dispatch(requestZones())
     return fetch(`${SONOS_API}/zones`)
       .then(response => response.json())
-      .then(json => dispatch(receivePosts(json)))
+      .then(json => dispatch(receiveZones(json)))
   }
 }
 

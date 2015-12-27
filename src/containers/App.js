@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { fetchZonesIfNeeded, fetchFavoritesIfNeeded } from '../actions'
-import Zones from '../components/Zones'
+
+import { fetchFavoritesIfNeeded } from '../actions'
+
+import Rooms from '../containers/Rooms'
 import Favorites from '../components/Favorites'
 
 import { Grid, Col, Navbar, Panel } from 'react-bootstrap'
@@ -9,23 +11,14 @@ import { Grid, Col, Navbar, Panel } from 'react-bootstrap'
 class App extends Component {
   constructor(props) {
     super(props)
-    this.handleRefreshClick = this.handleRefreshClick.bind(this)
   }
 
   componentDidMount() {
-    this.props.dispatch(fetchZonesIfNeeded())
     this.props.dispatch(fetchFavoritesIfNeeded())
   }
 
-  handleRefreshClick(e) {
-    e.preventDefault()
-
-    const { dispatch } = this.props
-    dispatch(fetchZonesIfNeeded())
-  }
-
   render() {
-    const { selectedZone, zones, isFetching, isFetchingFavorites, favorites } = this.props
+    const { selectedZone, isFetchingFavorites, favorites } = this.props
     return (
       <main>
         <Navbar staticTop>
@@ -35,9 +28,7 @@ class App extends Component {
         </Navbar>
         <Grid>
           <Col sm={4}>
-            <Panel header={<h3>Rooms</h3>} bsStyle="primary">
-              <Zones zones={zones} loading={isFetching}/>
-            </Panel>
+            <Rooms />
           </Col>
           <Col sm={4}>
             { /* move into component */ }
@@ -70,27 +61,18 @@ class App extends Component {
 
 App.propTypes = {
   selectedZone: PropTypes.object.isRequired,
-  zones: PropTypes.array.isRequired,
-  isFetching: PropTypes.bool.isRequired,
-  lastUpdated: PropTypes.number,
   dispatch: PropTypes.func.isRequired
 }
 
 function mapStateToProps(state) {
-  const { selectedZone, zonesByGroup, availableFavorites } = state
-  const { isFetching, isFetchingFavorites, lastUpdated, zones } = zonesByGroup
-  const { favorites } = availableFavorites
+  const { selectedZone, availableFavorites } = state
+  const { favorites, isFetchingFavorites } = availableFavorites
 
   return {
     selectedZone,
-    zones,
-    isFetching,
     isFetchingFavorites,
-    lastUpdated,
     favorites
   }
-
-  return state
 }
 
 export default connect(mapStateToProps)(App)
