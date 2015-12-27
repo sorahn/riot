@@ -2,8 +2,18 @@ import { combineReducers } from 'redux'
 import { SELECT_ZONE,
   REQUEST_ZONES, RECEIVE_ZONES,
   REQUEST_FAVORITES, RECEIVE_FAVORITES,
-  HOVER_ZONE, HOVER_OFF_ZONE
+  HOVER_ZONE, HOVER_OFF_ZONE, REQUEST_NEW_ZONE
 } from '../actions'
+
+function requestingZone(state = {
+  name: '',
+  type: ''
+}, action) {
+  switch (action.type) {
+    case REQUEST_NEW_ZONE: return action.request
+    default: return state
+  }
+}
 
 function hoveredZone(state = '', action) {
   switch (action.type) {
@@ -67,6 +77,7 @@ const rootReducer = combineReducers({
   zonesByGroup,
   selectedZone,
   hoveredZone,
+  requestingZone,
   availableFavorites
 })
 

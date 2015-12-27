@@ -7,6 +7,7 @@ export const RECEIVE_FAVORITES = 'RECEIVE_FAVORITES'
 export const SELECT_ZONE = 'SELECT_ZONE'
 export const HOVER_ZONE = 'HOVER_ZONE'
 export const HOVER_OFF_ZONE = 'HOVER_OFF_ZONE'
+export const REQUEST_NEW_ZONE = 'REQUEST_NEW_ZONE'
 
 const SONOS_API = 'http://xbmcs-mac-mini.local:5005'
 
@@ -28,6 +29,10 @@ function requestZones() {
 
 function requestFavorites() {
   return { type: REQUEST_FAVORITES }
+}
+
+export function requestNewZone(request) {
+  return { type: REQUEST_NEW_ZONE, request }
 }
 
 function receiveZones(json) {

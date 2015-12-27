@@ -60,7 +60,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  selectedZone: PropTypes.object.isRequired,
+  selectedZone: PropTypes.string.isRequired,
   dispatch: PropTypes.func.isRequired
 }
 

@@ -10,7 +10,7 @@ const stateMap = {
 
 export default class Zone extends Component {
   render() {
-    const { hovering, selected, zone: { coordinator, members }} = this.props
+    const { hovering, selected, requesting, zone: { coordinator, members }} = this.props
     const track = /spdif/.test(coordinator.state.currentTrack.uri) ? 'TV' : coordinator.state.currentTrack.title
     const ellipsis = {
       overflow: 'hidden',
@@ -38,12 +38,34 @@ export default class Zone extends Component {
         }
       >
         <ListGroup>
-          {members.map(member =>
-            <ListGroupItem key={member.uuid}>
-              <Button className="pull-right" bsStyle="info" bsSize="xs">Group</Button>
-              {member.roomName}
-            </ListGroupItem>
-          )}
+          {members.map(member => {
+            const lsiStyle = requesting.name ?
+              requesting.name === member.roomName ? 'warning' : 'success'
+              : null
+
+            return (
+              <ListGroupItem
+                key={member.uuid}
+                bsStyle={lsiStyle} >
+
+                <Button
+                  className="pull-right"
+                  bsStyle="info"
+                  bsSize="xs"
+                  onClick={e => {
+                    e.preventDefault()
+                    this.props.requestNewGroup({
+                      name: member.roomName,
+                      type: 'speaker'
+                    })
+                  }}>
+
+                  Group
+                </Button>
+                {member.roomName}
+              </ListGroupItem>
+            )
+          })}
         </ListGroup>
       </Panel>
     )
