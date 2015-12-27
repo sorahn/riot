@@ -11,7 +11,7 @@ const stateMap = {
 
 export default class Zones extends Component {
   handleClick(name) {
-    this.props.dispatch(selectZone(name))
+    this.popos.dispatch(selectZone(name))
   }
 
   titleOrTV(currentTrack) {
@@ -23,9 +23,19 @@ export default class Zones extends Component {
   }
 
   render() {
+    const {loading, zones} = this.props
+
     return (
       <div>
-        {this.props.zones.map(({coordinator, members}) =>
+        {loading && zones.length === 0 &&
+          <h2>Loading...</h2>
+        }
+
+        {!loading && zones.length === 0 &&
+          <h2>Empty.</h2>
+        }
+
+        {zones.map(({coordinator, members}) =>
           <Panel
             key={coordinator.uuid}
             header={<h3>{coordinator.roomName}</h3>}

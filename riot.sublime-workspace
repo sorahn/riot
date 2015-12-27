@@ -1,0 +1,1766 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"compone",
+				"components"
+			],
+			[
+				"isfet",
+				"isFetchingFavorites"
+			],
+			[
+				"isFe",
+				"isFetchingFavorites"
+			],
+			[
+				"isfe",
+				"isFetchingFavorites"
+			],
+			[
+				"fet",
+				"fetchFavoritesIfNeeded"
+			],
+			[
+				"re",
+				"REQUEST_FAVORITES"
+			],
+			[
+				"RE",
+				"RECEIVE_FAVORITES"
+			],
+			[
+				"ListG",
+				"ListGroup"
+			],
+			[
+				"shouldfe",
+				"shouldFetchFavorites"
+			],
+			[
+				"zones",
+				"zonesByGroup"
+			],
+			[
+				"Zone",
+				"ZoneStore"
+			],
+			[
+				"Zoe",
+				"ZoneStore"
+			],
+			[
+				"cal",
+				"calculateSpareTicketsPercent"
+			],
+			[
+				"calcu",
+				"calculatePortPercent"
+			],
+			[
+				"calc",
+				"calculateEpicPercent"
+			],
+			[
+				"List",
+				"ListGroupItem"
+			],
+			[
+				"S",
+				"SONOS_URL"
+			],
+			[
+				"hane",
+				"handleFavoriteClick"
+			],
+			[
+				"Acti",
+				"ActiveStore"
+			],
+			[
+				"ListGrou",
+				"ListGroupItem"
+			],
+			[
+				"pop",
+				"populateEpicsAndTickets"
+			],
+			[
+				"$_",
+				"$_	SERVER['…']"
+			],
+			[
+				"resp",
+				"responseJSON"
+			],
+			[
+				"custom",
+				"customCallback"
+			],
+			[
+				"had",
+				"handleFormErrors"
+			],
+			[
+				"$modal-",
+				"$modal-input-background-color"
+			],
+			[
+				"JSON",
+				"json_encode"
+			],
+			[
+				"to",
+				"toHaveBeenCalledWith"
+			],
+			[
+				"aja",
+				"ajaxErrors"
+			],
+			[
+				"garb",
+				"garbageRedirect"
+			],
+			[
+				"window",
+				"windowMock"
+			],
+			[
+				"succe",
+				"success"
+			],
+			[
+				"gar",
+				"garbageErrors"
+			],
+			[
+				"tohave",
+				"toHaveBeenCalledWith"
+			],
+			[
+				"ser",
+				"serializeArray"
+			],
+			[
+				"$error",
+				"$errorMessage"
+			],
+			[
+				"$serr",
+				"$sErrorHTML"
+			],
+			[
+				"Auto",
+				"AutoTemplate"
+			],
+			[
+				"custom_",
+				"custom_shell_path"
+			],
+			[
+				"devel_",
+				"devel_directory"
+			],
+			[
+				"devel",
+				"devel_directory"
+			],
+			[
+				"m",
+				"my_name"
+			],
+			[
+				"deve",
+				"devel_file"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/actions/index.js",
+			"settings":
+			{
+				"buffer_size": 1804,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/reducers/index.js",
+			"settings":
+			{
+				"buffer_size": 1581,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/containers/App.js",
+			"settings":
+			{
+				"buffer_size": 2654,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/NowPlaying.js",
+			"settings":
+			{
+				"buffer_size": 135,
+				"line_ending": "Unix",
+				"name": "NowPlaying.js"
+			}
+		},
+		{
+			"file": "/Users/darylr/Github/redux/examples/real-world/containers/Root.prod.js",
+			"settings":
+			{
+				"buffer_size": 384,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/Zones.js",
+			"settings":
+			{
+				"buffer_size": 1703,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 87.0,
+		"last_filter": "bash",
+		"selected_items":
+		[
+			[
+				"bash",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"todo",
+				"Set Syntax: Todo.txt"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Babel Transform"
+			],
+			[
+				"rename",
+				"File: Rename"
+			],
+			[
+				"closea",
+				"File: Close All"
+			],
+			[
+				"closeall",
+				"File: Close All"
+			],
+			[
+				"build",
+				"Build With: Development Build"
+			],
+			[
+				"pref",
+				"Preferences: Settings - User"
+			],
+			[
+				"new",
+				"File: New File"
+			],
+			[
+				"below",
+				"Origami: Create Pane Below"
+			],
+			[
+				"react",
+				"Snippet: React: class component"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"spaces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"project",
+				"Project: Save As"
+			],
+			[
+				"prok",
+				"Project: Quick Switch Project…"
+			],
+			[
+				"babel",
+				"Babel Transform"
+			],
+			[
+				"destr",
+				"Origami: Destroy Current Pane"
+			],
+			[
+				"jsx",
+				"Set Syntax: JSX"
+			],
+			[
+				"syntax next",
+				"Set Syntax: JavaScript Next"
+			],
+			[
+				"ori",
+				"Origami: Create Pane Below"
+			],
+			[
+				"trail",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"html",
+				"Set Syntax: HTML Extended"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"javasc",
+				"Set Syntax: JavaScript Next"
+			],
+			[
+				"json",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"cofee",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"coffee",
+				"Coffee: Fast Compile"
+			],
+			[
+				"lower",
+				"Convert Case: Lower Case"
+			],
+			[
+				"reveal",
+				"Reveal Current File in Side Bar"
+			],
+			[
+				"sort",
+				"Sort Lines"
+			],
+			[
+				"spell",
+				"Spelling: Spell Check"
+			],
+			[
+				"closeal",
+				"File: Close All"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"clseall",
+				"File: Close All"
+			],
+			[
+				"sass",
+				"Set Syntax: Sass"
+			],
+			[
+				"scss",
+				"Set Syntax: SCSS"
+			],
+			[
+				"str",
+				"Snippet: string"
+			],
+			[
+				"syntax specif",
+				"Preferences: Syntax Specific – User"
+			],
+			[
+				"tra",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"browse",
+				"Preferences: Browse Packages"
+			],
+			[
+				"wra",
+				"Word Wrap: Toggle"
+			],
+			[
+				"trila",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"gitconfig",
+				"Set Syntax: Git Config"
+			],
+			[
+				"trail	",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"convert",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"tr",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"shell",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"new file",
+				"File: New File"
+			],
+			[
+				"fish",
+				"Set Syntax: Shell Script (fish)"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"removepa",
+				"Package Control: Remove Package"
+			]
+		],
+		"width": 521.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/darylr/Github/riot/src",
+		"/Users/darylr/Github/riot/src/actions",
+		"/Users/darylr/Github/riot/src/components",
+		"/Users/darylr/Github/riot/src/containers",
+		"/Users/darylr/Github/riot/src/reducers",
+		"/Users/darylr/Github/redux",
+		"/Users/darylr/Github/redux/examples",
+		"/Users/darylr/Github/redux/examples/real-world",
+		"/Users/darylr/Github/redux/examples/real-world/actions",
+		"/Users/darylr/Github/redux/examples/real-world/components",
+		"/Users/darylr/Github/redux/examples/real-world/containers",
+		"/Users/darylr/Github/redux/examples/real-world/middleware",
+		"/Users/darylr/Github/redux/examples/real-world/reducers"
+	],
+	"file_history":
+	[
+		"/Users/darylr/Github/riot/src/components/Favorites.js",
+		"/Users/darylr/Github/riot/src/containers/App.js",
+		"/Users/darylr/Github/riot/src/components/Zones.js",
+		"/Users/darylr/Github/riot/src/index.js",
+		"/Users/darylr/Github/riot/src/constants/index.js",
+		"/Users/darylr/Github/riot/src/reducers/index.js",
+		"/Users/darylr/Github/riot/src/actions/index.js",
+		"/Users/darylr/Github/node-sonos-web-controller/server.js",
+		"/Users/darylr/Github/riot/src/components/Picker.js",
+		"/Users/darylr/Github/node-sonos-web-controller/node_modules/sonos-discovery/lib/sonos.js",
+		"/Users/darylr/.todo.cfg",
+		"/Users/darylr/Github/riot/riot.sublime-project",
+		"/Users/darylr/Github/riot-dashboard/src/helpers/StoreConnector.jsx",
+		"/Users/darylr/src/schnauzer/src/components/Dashboard.js",
+		"/Users/darylr/Github/riot-dashboard/riot-dashboard.sublime-project",
+		"/Users/darylr/Github/riot-dashboard/src/stores/Active.jsx",
+		"/Users/darylr/Github/riot-dashboard/src/stores/Favorites.jsx",
+		"/Users/darylr/Github/node-sonos-http-api/lib/actions/favorite.js",
+		"/Users/darylr/Github/node-sonos-http-api/lib/actions/favorites.js",
+		"/Users/darylr/Github/riot-dashboard/src/helpers/SonosApi.jsx",
+		"/Users/darylr/Github/riot-dashboard/src/components/Favorites.jsx",
+		"/Users/darylr/Github/riot-dashboard/src/components/Zones.jsx",
+		"/Users/darylr/Github/riot-dashboard/package.json",
+		"/Users/darylr/Github/riot-dashboard/src/stores/Zones.jsx",
+		"/Users/darylr/Github/riot-dashboard/src/actions/Farva.jsx",
+		"/Users/darylr/Github/riot-dashboard/.gitignore",
+		"/Users/darylr/Github/riot-dashboard/src/helpers/StoreUtils.jsx",
+		"/Users/darylr/src/hybrid.client/test/spec/stores/ConfigStoreSpec.js",
+		"/Users/darylr/src/schnauzer/webpack.config.js",
+		"/Users/darylr/src/schnauzer/src/actions/ActionCreator.js",
+		"/Users/darylr/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/darylr/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/darylr/Github/riot-dashboard/README.md",
+		"/Users/darylr/Github/riot-dashboard/src/components/RiotDashboard.jsx",
+		"/Users/darylr/Github/node-sonos-http-api/lib/sonos-http-api.js",
+		"/Users/darylr/src/schnauzer/.kitty.config",
+		"/Users/darylr/src/naiad.internal/.kitty.config",
+		"/Users/darylr/Github/sonos/src/actions/Commands.jsx",
+		"/Users/darylr/Github/sonos/node_modules/react/package.json",
+		"/Users/darylr/Github/sonos/dist/index.html",
+		"/Users/darylr/Github/sonos/gulpfile.js",
+		"/Users/darylr/Github/sonos/src/components/Remote.jsx",
+		"/Users/darylr/Github/sonos/webpack.config.js",
+		"/Users/darylr/Github/sonos/src/main.jsx",
+		"/Users/darylr/Github/sonos/node_modules/vinyl-source-stream/package.json",
+		"/Users/darylr/Github/sonos/.esformatterrc",
+		"/Users/darylr/Github/sonos/sonos.sublime-project",
+		"/Users/darylr/Github/sonos/package.json",
+		"/Users/darylr/src/hybrid.client/src/components/HybridClient.js",
+		"/Users/darylr/Github/sonos/eslint.config.json",
+		"/Users/darylr/Github/sonos/src/main.js",
+		"/Users/darylr/Github/sonos/karma.conf.js",
+		"/Users/darylr/Github/sonos/src/actions/ActionCreator.js",
+		"/Users/darylr/src/hybrid.client/test/helpers/mockNaiadMessages.js",
+		"/Users/darylr/src/schnauzer/src/lib/JiraApi.js",
+		"/Users/darylr/src/schnauzer/.eslintrc",
+		"/Users/darylr/src/schnauzer/src/components/tickets/Ports.js",
+		"/Users/darylr/src/schnauzer/dist/dashboard.js",
+		"/Users/darylr/src/schnauzer/src/components/panels/PanelTitle.js",
+		"/Users/darylr/src/schnauzer/src/components/tickets/Ticket.js",
+		"/Users/darylr/src/schnauzer/src/components/tickets/Port.js",
+		"/Users/darylr/src/schnauzer/src/stores/TicketStore.js",
+		"/Users/darylr/src/schnauzer/src/components/tickets/Epics.js",
+		"/Users/darylr/src/schnauzer/src/components/tickets/Epic.js",
+		"/Users/darylr/src/schnauzer/src/components/panels/PanelHeader.js",
+		"/Users/darylr/src/schnauzer/src/components/SearchPanel.js",
+		"/Users/darylr/src/schnauzer/node_modules/react-bootstrap/lib/InputBase.js",
+		"/Users/darylr/src/naiad.web/php-libs/UserPref.php",
+		"/Users/darylr/src/naiad.streamate/tmplts/streamate_3.0/www/picknickb.html",
+		"/Users/darylr/.homesick/repos/dotfiles/home/.config/fish/functions/naiad_jump.fish",
+		"/Users/darylr/src/naiad.css/sass/imports/bootstrap/_modals.scss",
+		"/Users/darylr/src/naiad.gfx/3.0/javascripts/naiad/forms.js",
+		"/Users/darylr/src/naiad.web/php-libs/WWW/LoginFunctor.php",
+		"/Users/darylr/src/naiad.internal/www/daryl/styles/modal.html",
+		"/Users/darylr/src/naiad.streamate/tmplts/streamate_3.0/www/login-functor/login-modal.html",
+		"/Users/darylr/src/naiad.streamate/tmplts/streamate_3.0/www/login-functor/login-form.html",
+		"/Users/darylr/src/naiad.internal/www/daryl/jira/index.html",
+		"/Users/darylr/src/naiad.internal/www/daryl/jira/data.json",
+		"/Users/darylr/src/naiad.internal/www/daryl/styles/frame.html",
+		"/Users/darylr/src/naiad.streamate/www/login.php",
+		"/Users/darylr/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/darylr/src/naiad.web/tmplts/streamate_2.0/www/forgot-password/forgot-password.utf8",
+		"/Users/darylr/Github/dotfiles/home/.config/fish/config.fish",
+		"/Users/darylr/.homesick/repos/dotfiles/home/.config/fish/functions/naiad_repo_clone.fish",
+		"/Users/darylr/src/naiad.web/loc/de/tmplts/streamate_2.0/www/forgot-password/forgot-password.utf8",
+		"/Users/darylr/src/naiad.web/loc/es/tmplts/streamate_2.0/www/forgot-password/forgot-password.utf8",
+		"/Users/darylr/src/naiad.web/loc/fr/tmplts/streamate_2.0/www/forgot-password/forgot-password.utf8",
+		"/Users/darylr/src/naiad.web/loc/it/tmplts/streamate_2.0/www/forgot-password/forgot-password.utf8",
+		"/Users/darylr/src/naiad.web/loc/nl/tmplts/streamate_2.0/www/forgot-password/forgot-password.utf8",
+		"/Users/darylr/src/naiad.web/loc/pt/tmplts/streamate_2.0/www/forgot-password/forgot-password.utf8",
+		"/Users/darylr/src/naiad.web/loc/sv/tmplts/streamate_2.0/www/forgot-password/forgot-password.utf8",
+		"/Users/darylr/src/naiad.web/www/streamate.com/www/inc/Naiad_login_log.php",
+		"/Users/darylr/src/naiad.web/loc/svtmplts/streamate_2.0/www/forgot-password/forgot-password.utf8",
+		"/Users/darylr/src/naiad.web/loc/estmplts/streamate_2.0/www/forgot-password/forgot-password.utf8",
+		"/Users/darylr/src/naiad.web/loc/pttmplts/streamate_2.0/www/forgot-password/forgot-password.utf8",
+		"/Users/darylr/.homesick/repos/dotfiles/home/.config/fish/functions/naiad_tds_copy.fish",
+		"/Users/darylr/.homesick/repos/dotfiles/home/.config/fish/functions/path_with_tilde.fish",
+		"/Users/darylr/src/naiad.gfx/3.0/test/naiad/formsSpec.js",
+		"/Users/darylr/src/naiad.gfx/3.0/javascripts/naiad/popover.js",
+		"/Users/darylr/src/naiad.web/www/streamate.com/www/signup/join20.php",
+		"/Users/darylr/src/naiad.web/www/streamate.com/www/goauth.php",
+		"/Users/darylr/src/naiad.web/php-libs/WWW/ForgotPassword.php",
+		"/Users/darylr/src/naiad.gfx/3.0/javascripts/naiad/core.js",
+		"/Users/darylr/Github/dotfiles/home/.gitconfig",
+		"/Users/darylr/src/naiad.gfx/3.0/javascripts/naiad/tracking.js",
+		"/Users/darylr/src/naiad.web/tmplts/streamate_3.0/www/error/index.html",
+		"/Users/darylr/src/naiad.web/tmplts/streamate_3.0/www/error/https:::jira.atg-corp.com:secure:CreateIssueDetail",
+		"/Users/darylr/.homesick/repos/dotfiles/home/.config/fish/functions/naiad_which_proxy.fish",
+		"/Users/darylr/src/naiad.web/php-libs/Signup/JoinBase.php",
+		"/Users/darylr/src/naiad.web/tmplts/streamate_3.0/www/signup/duplicate.html",
+		"/tmp/subl stdin 1qxx3i.txt",
+		"/Users/darylr/src/naiad.web/tmplts/streamate_2.0/www/signup/2.0/join-strings.utf8",
+		"/Users/darylr/src/naiad.web/loc/de/tmplts/streamate_2.0/www/signup/2.0/join-strings.utf8",
+		"/Users/darylr/src/naiad.web/loc/es/tmplts/streamate_2.0/www/signup/2.0/join-strings.utf8",
+		"/Users/darylr/src/naiad.web/loc/fr/tmplts/streamate_2.0/www/signup/2.0/join-strings.utf8",
+		"/Users/darylr/src/naiad.web/loc/it/tmplts/streamate_2.0/www/signup/2.0/join-strings.utf8",
+		"/Users/darylr/src/naiad.web/loc/nl/tmplts/streamate_2.0/www/signup/2.0/join-strings.utf8",
+		"/Users/darylr/src/naiad.web/www/streamate.com/www/inc/authenticate-html.php",
+		"/Users/darylr/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/darylr/src/naiad.web/loc/pt/tmplts/streamate_2.0/www/signup/2.0/join-strings.utf8",
+		"/Users/darylr/src/naiad.web/loc/sv/tmplts/streamate_2.0/www/signup/2.0/join-strings.utf8",
+		"/Users/darylr/src/naiad.web/tmplts/streamate_3.0/www/forgot-password/form.html",
+		"/Users/darylr/.homesick/repos/dotfiles/home/.config/fish/functions/naiad_tds_install.fish",
+		"/Users/darylr/src/naiad.web/www/streamate.com/www/login.php",
+		"/Users/darylr/src/naiad.css/sass/base/_forms.scss",
+		"/Users/darylr/src/naiad.web/tmplts/streamate_3.0/www/footer/member.html",
+		"/Users/darylr/src/naiad.web/tmplts/streamate_3.0/www/login-functor/login-modal.html",
+		"/Users/darylr/src/naiad.web/tmplts/streamate_3.0/www/login-functor/login-form.html"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"",
+			"/Users/darylr/Github/node-sonos-http-api",
+			"",
+			"/Users/darylr/src/hybrid.client",
+			"*.utf8",
+			"",
+			"/Users/darylr/src/naiad.web"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"this.props.",
+			"empty",
+			"isFetching",
+			"fetchZonesIfNeeded",
+			"selectedZone",
+			"selectZone",
+			"groupsetvolu",
+			"groupSe",
+			"member",
+			"members",
+			"Zones",
+			"favorites",
+			"initialState",
+			"isFetchingFavorites",
+			"isfet",
+			"lastupdated",
+			"zonesByGroup",
+			"shouldFetchFavorites",
+			"fetchFavoritesIfNeeded",
+			"isFetchingFavorites",
+			"state",
+			"fetchFavoritesIfNeeded",
+			"availableFavorites",
+			"favorites",
+			"zones",
+			"isFetching",
+			"fetchZonesIfNeeded",
+			"fetchFavoritesIfNeeded",
+			"fetchPostsIfNeeded",
+			"isFetching",
+			"ZONES",
+			"span",
+			"getState",
+			"u",
+			"ZONES",
+			"RECEIVE_POSTS",
+			"REQUEST_POSTS",
+			"SELECT_REDDIT",
+			"items",
+			"getState",
+			"dispatch",
+			"name",
+			"handleChange",
+			"coordinator",
+			"reddit",
+			"isFetching",
+			"selectedzone",
+			"selectedReddit",
+			"postsByReddit",
+			"reddit",
+			"selectedReddit",
+			"fetchPostsIfNeeded",
+			"selectedZone",
+			"selectedReddit",
+			"nextReddit",
+			"handleChange",
+			"posts",
+			"items",
+			"posts",
+			"shouldFetchPosts",
+			"Posts",
+			"post",
+			"posts",
+			"Posts",
+			"RECEIVE_POSTS",
+			"posts",
+			"post",
+			"Posts",
+			"didInvalidate",
+			"SELECT_REDDIT",
+			"selectedReddit",
+			"postsByReddit",
+			"fetchPostsIfNeeded",
+			"posts",
+			"shouldFetchPosts",
+			"reddit",
+			"receivePosts",
+			"requestPosts",
+			"posts",
+			"didInvalidate",
+			"REQUEST_POSTS",
+			"const",
+			"Block",
+			"Flex>",
+			"Flex",
+			"cmd",
+			"activestore",
+			"active",
+			"values",
+			"ListGroupItem",
+			"meow",
+			"epic.",
+			"precent",
+			"defaultprops",
+			"summary",
+			"summa",
+			"customfield_11802",
+			"summary",
+			"babel",
+			"portbase",
+			"portStore",
+			"populateEpicsAndTickets",
+			"portBase",
+			"assign",
+			"epicbase",
+			"assign",
+			"epic",
+			"ticket",
+			"let",
+			"epics",
+			"calculateEpicPercent",
+			"getEpics",
+			"getTicketsForEpic",
+			"issue",
+			"issues",
+			"populateEpicsAndTickets",
+			"syrup",
+			"gravy",
+			"Grid",
+			"Favorites",
+			"favorites",
+			"Favorites",
+			"Block sm=",
+			"Col",
+			"Row",
+			"response",
+			"Access-Control",
+			"res.end"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"fetchZonesIfNeeded",
+			"RECEIVE_ZONES",
+			"REQUEST_ZONES",
+			"SELECT_ZONE",
+			"RECEIVE_ZONES",
+			"SELECT_ZONE",
+			"REQUEST_ZONES",
+			"data",
+			"meow",
+			"PortStore",
+			"GOT_TICKETS_IN_PORT",
+			"g=${sixfour_html}",
+			"nav__",
+			"<a href=\"${exec:UrlHandler:/chrome-video-preview-settings.html}\">",
+			"<a href=\"${exec:UrlHandler:/chrome-video-preview-settings.html\">"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/actions/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1804,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								346,
+								356
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1000.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/reducers/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1581,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								315,
+								315
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/containers/App.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2654,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1195,
+								1195
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 496.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/components/NowPlaying.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 135,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								77,
+								77
+							]
+						],
+						"settings":
+						{
+							"auto_name": "NowPlaying.js",
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/darylr/Github/redux/examples/real-world/containers/Root.prod.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 384,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								384,
+								384
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/components/Zones.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1703,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								607,
+								607
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 217.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "riot.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pock",
+				"src/components/Picker.js"
+			],
+			[
+				"app",
+				"src/containers/App.js"
+			],
+			[
+				"acti",
+				"src/actions/index.js"
+			],
+			[
+				"pos",
+				"src/components/Posts.js"
+			],
+			[
+				"index",
+				"src/index.js"
+			],
+			[
+				"sub",
+				"riot.sublime-project"
+			],
+			[
+				"posts",
+				"src/components/Posts.js"
+			],
+			[
+				"zons",
+				"riot-dashboard/src/components/Zones.jsx"
+			],
+			[
+				"farva",
+				"riot-dashboard/src/actions/Farva.jsx"
+			],
+			[
+				"dashboar",
+				"schnauzer/src/components/Dashboard.js"
+			],
+			[
+				"sonosa",
+				"riot-dashboard/src/helpers/SonosApi.jsx"
+			],
+			[
+				"pack",
+				"riot-dashboard/package.json"
+			],
+			[
+				".git",
+				"riot-dashboard/.gitignore"
+			],
+			[
+				"hybridpack",
+				"hybrid.client/package.json"
+			],
+			[
+				"ticket",
+				"schnauzer/src/components/tickets/Ticket.js"
+			],
+			[
+				"paneltitle",
+				"schnauzer/src/components/panels/PanelTitle.js"
+			],
+			[
+				"panelheader",
+				"schnauzer/src/components/panels/PanelHeader.js"
+			],
+			[
+				"jiraapi",
+				"schnauzer/src/lib/JiraApi.js"
+			],
+			[
+				"actioncreat",
+				"schnauzer/src/actions/ActionCreator.js"
+			],
+			[
+				"web",
+				"schnauzer/webpack.config.js"
+			],
+			[
+				"epic",
+				"schnauzer/src/components/tickets/Epic.js"
+			],
+			[
+				"tickettable",
+				"schnauzer/src/components/tickets/TicketTable.js"
+			],
+			[
+				"searchpane",
+				"schnauzer/src/components/SearchPanel.js"
+			],
+			[
+				"dash",
+				"schnauzer/src/components/Dashboard.js"
+			],
+			[
+				"portstore",
+				"schnauzer/src/stores/PortStore.js"
+			],
+			[
+				"ticketab",
+				"schnauzer/src/components/tickets/TicketTable.js"
+			],
+			[
+				"rio",
+				"riot-dashboard/riot-dashboard.sublime-project"
+			],
+			[
+				"zones",
+				"riot-dashboard/src/stores/Zones.jsx"
+			],
+			[
+				"active",
+				"riot-dashboard/src/stores/Active.jsx"
+			],
+			[
+				"far",
+				"riot-dashboard/src/actions/Farva.jsx"
+			],
+			[
+				"faar",
+				"riot-dashboard/src/actions/Farva.jsx"
+			],
+			[
+				"fav",
+				"riot-dashboard/src/stores/Favorites.jsx"
+			],
+			[
+				"storeport",
+				"schnauzer/src/stores/PortStore.js"
+			],
+			[
+				"hybridcli",
+				"hybrid.client/src/components/HybridClient.js"
+			],
+			[
+				"dispatcher",
+				"hybrid.client/src/dispatcher/Dispatcher.js"
+			],
+			[
+				"hyb",
+				"hybrid.client/src/components/HybridClient.js"
+			],
+			[
+				"g",
+				"sonos/gulpfile.js"
+			],
+			[
+				"eslint",
+				".eslintrc"
+			],
+			[
+				"actions",
+				"src/constants/Actions.js"
+			],
+			[
+				"actioncreator",
+				"src/actions/ActionCreator.js"
+			],
+			[
+				"dashboard",
+				"src/components/Dashboard.js"
+			],
+			[
+				"ticketstore",
+				"src/stores/TicketStore.js"
+			],
+			[
+				"searchpanel",
+				"src/components/SearchPanel.js"
+			],
+			[
+				"ports",
+				"src/components/tickets/Port.js"
+			],
+			[
+				"epis",
+				"src/components/tickets/Epics.js"
+			],
+			[
+				"ajaxreq",
+				"schnauzer/src/lib/AjaxRequest.js"
+			],
+			[
+				"webpack",
+				"schnauzer/webpack.config.js"
+			],
+			[
+				"index.html",
+				"jira/index.html"
+			],
+			[
+				"modals",
+				"~/src/naiad.css/sass/imports/bootstrap/_modals.scss"
+			],
+			[
+				"ajax.php",
+				"src/naiad.internal/www/daryl/jira/ajax.php"
+			],
+			[
+				"modals.scss",
+				"css/sass/imports/bootstrap/_modals.scss"
+			],
+			[
+				"forms.scs",
+				"css/sass/base/_forms.scss"
+			],
+			[
+				"picknick",
+				"src/naiad.streamate/tmplts/streamate_2.0/www/picknick.html"
+			],
+			[
+				"arcades",
+				"Github/vintage/bower_components/flynns/src/_arcades.scss"
+			],
+			[
+				"asteroids",
+				"Github/vintage/bower_components/flynns/src/arcades/_asteroids.scss"
+			],
+			[
+				"responsspecialofferstreammet",
+				"src/naiad.streamate/tmplts/streamate_2.0/www/signup/2.0/response_specialoffer_streammetart.html"
+			],
+			[
+				"tandc",
+				"src/naiad.streamate/tmplts/streamate_3.0/www/docs/tandc.html"
+			],
+			[
+				"docs.html",
+				"src/naiad.streamate/tmplts/streamate_3.0/www/docs.html"
+			],
+			[
+				"picknickb",
+				"src/naiad.streamate/tmplts/streamate_3.0/www/picknickb.html"
+			],
+			[
+				"picknick.html",
+				"src/naiad.streamate/tmplts/streamate_3.0/www/picknickb.html"
+			],
+			[
+				"picknickb.html",
+				"src/naiad.streamate/tmplts/streamate_3.0/www/picknickb.html"
+			],
+			[
+				"login.hp",
+				"src/naiad.streamate/www/login.php"
+			],
+			[
+				"loginform.html",
+				"src/naiad.streamate/tmplts/streamate_3.0/www/login-functor/login-form.html"
+			],
+			[
+				"loginmodal",
+				"src/naiad.streamate/tmplts/streamate_3.0/www/login-functor/login-modal.html"
+			],
+			[
+				"loginfunctor.",
+				"ninc/WWW/LoginFunctor.php"
+			],
+			[
+				"forms.js",
+				"src/naiad.gfx/3.0/javascripts/naiad/forms.js"
+			],
+			[
+				"stylesframe.html",
+				"src/naiad.internal/www/daryl/styles/frame.html"
+			],
+			[
+				"stylemodal",
+				"src/naiad.internal/www/daryl/styles/modal.html"
+			],
+			[
+				"jump",
+				"fish/functions/naiad_jump.fish"
+			],
+			[
+				"naiadloginlog",
+				"streamate/www/inc/Naiad_login_log.php"
+			],
+			[
+				"naiad_repo",
+				"fish/functions/naiad_repo_clone.fish"
+			],
+			[
+				"fishconfig",
+				"Github/dotfiles/home/.config/fish/config.fish"
+			],
+			[
+				"pathwith",
+				"fish/functions/path_with_tilde.fish"
+			],
+			[
+				"naiadtdscop",
+				"fish/functions/naiad_tds_copy.fish"
+			],
+			[
+				"naiad_which",
+				"fish/functions/naiad_which_proxy.fish"
+			],
+			[
+				"formsspec",
+				"javascript/test/naiad/formsSpec.js"
+			],
+			[
+				"forgotpassword.utf8",
+				"src/naiad.web/tmplts/streamate_2.0/www/forgot-password/forgot-password.utf8"
+			],
+			[
+				"popover.js",
+				"javascript/javascripts/naiad/popover.js"
+			],
+			[
+				"core.js",
+				"javascript/javascripts/naiad/core.js"
+			],
+			[
+				"gitcofig",
+				"Github/dotfiles/home/.gitconfig"
+			],
+			[
+				"joinstrings.utf",
+				"src/naiad.web/tmplts/streamate_2.0/www/signup/2.0/join-strings.utf8"
+			],
+			[
+				"forgotpasswordform.html",
+				"html/forgot-password/form.html"
+			],
+			[
+				".gitconfig",
+				".homesick/repos/dotfiles/home/.gitconfig"
+			],
+			[
+				"forms.scss",
+				"src/naiad.css/sass/base/_forms.scss"
+			],
+			[
+				"login.php",
+				"streamate/www/login.php"
+			],
+			[
+				"login-form",
+				"html/login-functor/login-form.html"
+			],
+			[
+				"member.html",
+				"html/footer/member.html"
+			],
+			[
+				"forgotpasut",
+				"src/naiad.web/tmplts/streamate_2.0/www/forgot-password/forgot-password.utf8"
+			],
+			[
+				"naiadtdsinsta",
+				"fish/functions/naiad_tds_install.fish"
+			],
+			[
+				"forgotpass",
+				"ninc/WWW/ForgotPassword.php"
+			],
+			[
+				"forgotpassword/index.php",
+				"streamate/www/forgot-password/index.php"
+			],
+			[
+				"app.json",
+				"javascript/config/_app.json"
+			],
+			[
+				"forgotpassword",
+				"ninc/WWW/ForgotPassword.php"
+			],
+			[
+				"forgotpasswordsuccess",
+				"html/forgot-password/sent-success.html"
+			],
+			[
+				"loginfunctor",
+				"ninc/WWW/LoginFunctor.php"
+			],
+			[
+				"modal.scss",
+				"css/sass/imports/bootstrap/_modals.scss"
+			],
+			[
+				"response_specialoffer_streamsexart",
+				"src/naiad.web/tmplts/streamate_2.0/www/signup/2.0/response_specialoffer_streamsexart.html"
+			],
+			[
+				"picnkick.html",
+				"src/naiad.web/tmplts/streamate_2.0/www/picknick.html"
+			],
+			[
+				"responsepre",
+				"ninc/Signup/ResponsePremiumUser.php"
+			],
+			[
+				"metart",
+				"src/naiad.web/bin/promo/promo-streammetart.php"
+			],
+			[
+				"argusresponse.php",
+				"streamate/www/p/argus/response.php"
+			],
+			[
+				"responsepremiumuser",
+				"src/naiad.web/php-libs/Signup/ResponsePremiumUser.php"
+			],
+			[
+				"picknick.php",
+				"streamate/www/picknick.php"
+			],
+			[
+				"partner",
+				"ninc/Partner/Partner.php"
+			],
+			[
+				"partnerfaac",
+				"ninc/Partner/PartnerFactory.php"
+			],
+			[
+				"join0",
+				"streamate/www/signup/join20.php"
+			],
+			[
+				"goauthcallbac",
+				"src/naiad.web/www/naiadsystems.com/dyn/goauth_callback.php"
+			],
+			[
+				"activity",
+				"src/fci.php/ActivityLog.php"
+			],
+			[
+				"loginfunc",
+				"ninc/WWW/LoginFunctor.php"
+			],
+			[
+				"forgotpassword/index",
+				"streamate/www/forgot-password/index.php"
+			],
+			[
+				"goauthcall",
+				"src/naiad.web/www/naiadsystems.com/dyn/goauth_callback.php"
+			],
+			[
+				"naiaadsystems.htaccess",
+				"src/naiad.web/www/naiadsystems.com/dyn/.htaccess"
+			],
+			[
+				"googleoau",
+				"ninc/WWW/OAuth/GoogleOAuth.php"
+			],
+			[
+				"goa",
+				"streamate/www/goauth.php"
+			],
+			[
+				"loginform",
+				"src/naiad.web/tmplts/streamate_3.0/www/login-functor/login-form.html"
+			],
+			[
+				"forgotpasswordfailed.html",
+				"html/forgot-password/failed.html"
+			],
+			[
+				"bootstraptab.js",
+				"javascript/bower_components/bootstrap/js/tab.js"
+			],
+			[
+				"forgotpasswordform",
+				"html/forgot-password/form.html"
+			],
+			[
+				"fontawesomeicons.scss",
+				"src/naiad.css/sass/imports/font-awesome/_icons.scss"
+			],
+			[
+				"fontawesome.scss",
+				"css/sass/imports/_font-awesome.scss"
+			],
+			[
+				"lazymanagerspe",
+				"javascript/test/naiad/search/lazymanagerSpec.js"
+			],
+			[
+				"myfavorites",
+				"streamate/www/inc/myfavorites.php"
+			],
+			[
+				"mystreamtae",
+				"streamate/www/mystreamate.php"
+			],
+			[
+				"favorites.php",
+				"streamate/www/inc/favorites.php"
+			],
+			[
+				"tracking.js",
+				"javascript/javascripts/naiad/tracking.js"
+			],
+			[
+				"login-modal",
+				"html/login-functor/login-modal.html"
+			],
+			[
+				"errors/loginerrors",
+				"src/naiad.web/text/errors/login_errors.utf8"
+			],
+			[
+				"thumbnails.js",
+				"Github/vintage/thumbnails.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 67.0,
+		"last_filter": "select",
+		"selected_items":
+		[
+			[
+				"select",
+				"selectZone"
+			],
+			[
+				"fet",
+				"fetchFavoritesIfNeeded"
+			],
+			[
+				"fetchfav",
+				"fetchFavoritesIfNeeded"
+			],
+			[
+				"zones",
+				"zones"
+			],
+			[
+				"postsbyred",
+				"postsByReddit"
+			],
+			[
+				"selectredd",
+				"selectReddit"
+			],
+			[
+				"shouldfe",
+				"shouldFetchPosts"
+			],
+			[
+				"fetchzones",
+				"fetchZones"
+			],
+			[
+				"posts",
+				"posts"
+			],
+			[
+				"selece",
+				"selectedZone"
+			],
+			[
+				"selec",
+				"selectedReddit"
+			],
+			[
+				"fetchpose",
+				"fetchPostsIfNeeded"
+			],
+			[
+				"featuretest",
+				"FeatureTest"
+			],
+			[
+				"getuseragent",
+				"GetUserAgent"
+			],
+			[
+				"setuseragent",
+				"SetUserAgent"
+			],
+			[
+				"trackccb",
+				"trackCCBillClicks: function()"
+			],
+			[
+				"unhtml",
+				"UnHTML"
+			],
+			[
+				"createbasic",
+				"CreateBasicUserInOneStepAndExit"
+			],
+			[
+				"creatbasic",
+				"CreateBasicUserInOneStepAndExit"
+			],
+			[
+				"userfavorites",
+				"UserFavorites"
+			],
+			[
+				"queryarray2str",
+				"QueryArray2String"
+			],
+			[
+				"setexiturl",
+				"SetExitUrl"
+			],
+			[
+				"encrypteduri",
+				"EncryptedUri"
+			],
+			[
+				"emailuser",
+				"EmailUser"
+			],
+			[
+				"inonestep",
+				"CreateBasicUserInOneStepAndExit"
+			],
+			[
+				"asstring",
+				"AsString"
+			],
+			[
+				"constructnaiaduri",
+				"ConstructNaiadUriFunctor"
+			],
+			[
+				"constrnaiadur",
+				"ConstructNaiadUserAgent"
+			],
+			[
+				"celebshowcalendar",
+				"NaiadCelebShowCalendarHTML"
+			],
+			[
+				"celebshowcal",
+				"NaiadCelebShowCalendarHTML"
+			],
+			[
+				"selflink",
+				"self-link-states"
+			],
+			[
+				"self-link",
+				"self-link-states"
+			],
+			[
+				"otagshtml",
+				"ConstructTagsHTML"
+			],
+			[
+				"states",
+				"all_states"
+			],
+			[
+				"parseifexis",
+				"ParseIfExists"
+			],
+			[
+				"gethtml",
+				"GetHTML"
+			],
+			[
+				"writedebugfoot",
+				"WriteDebugFooter"
+			],
+			[
+				"executeandprint",
+				"ExecuteAndPrint"
+			],
+			[
+				"handleproces",
+				"HandleProcessResultAndExit"
+			],
+			[
+				"writedebugfooter",
+				"WriteDebugFooter"
+			],
+			[
+				"usesm3",
+				"UseSM3"
+			],
+			[
+				"ismobiledevice",
+				"IsMobileDevice"
+			],
+			[
+				"handleprocessres",
+				"HandleProcessResultAndExit"
+			],
+			[
+				"createbasicuser",
+				"CreateBasicUserInOneStepAndExit"
+			],
+			[
+				"naiadvalidif",
+				"NaiadValidifier"
+			],
+			[
+				"providerinfo",
+				"providerInfo"
+			],
+			[
+				"dev",
+				"dev"
+			]
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 209.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -36,20 +36,15 @@ class App extends Component {
         <Grid>
           <Col sm={4}>
             <Panel header={<h3>Rooms</h3>} bsStyle="primary">
-              {isFetching && zones.length === 0 &&
-                <h2>Loading...</h2>
-              }
-              {!isFetching && zones.length === 0 &&
-                <h2>Empty.</h2>
-              }
-              {zones.length > 0 &&
-                <Zones zones={zones} />
-              }
+              <Zones zones={zones} loading={isFetching}/>
             </Panel>
           </Col>
           <Col sm={4}>
+            { /* move into component */ }
+            { /* if there are zones, but not a selectedZone, dispatch seletZone[0] */ }
+
             <Panel header={<h3>Now Playing</h3>} bsStyle="primary">
-              {selectedZone &&
+              {selectedZone.name &&
                 <h2>{selectedZone.name}</h2>
               }
             </Panel>

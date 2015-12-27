@@ -10,6 +10,8 @@ function selectedZone(state = {}, action) {
       return Object.assign({}, {
         name: action.name
       })
+
+    // remove this from this reducer, and make an empty component fire it off instead
     case RECEIVE_ZONES:
       if (state.name) {
         return state
