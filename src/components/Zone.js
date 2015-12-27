@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react'
-import { Panel, ListGroup, ListGroupItem } from 'react-bootstrap'
+import { Panel, ListGroup, ListGroupItem, Button } from 'react-bootstrap'
 import Icon from 'react-fontawesome'
 
 const stateMap = {
@@ -9,21 +9,15 @@ const stateMap = {
 }
 
 export default class Zone extends Component {
-  titleOrTV(currentTrack) {
-    if (/spdif/.test(currentTrack.uri)) {
-      return 'TV'
-    }
-
-    return currentTrack.title
-  }
-
   render() {
-    const { zone: { coordinator, members }} = this.props
+    const { hovering, zone: { coordinator, members }} = this.props
+    const track = /spdif/.test(coordinator.state.currentTrack.uri) ? 'TV' : coordinator.state.currentTrack.title
     const ellipsis = {
       overflow: 'hidden',
       textOverflow: 'ellipsis',
       whiteSpace: 'nowrap'
     }
+    const bsStyle = hovering === coordinator.roomName ? 'info' : 'default'
 
     return (
       <Panel
@@ -32,17 +26,21 @@ export default class Zone extends Component {
         onClick={() => this.props.handleClick()}
         onMouseEnter={() => this.props.handleMouseEnter()}
         onMouseLeave={() => this.props.handleMouseLeave()}
+        bsStyle={bsStyle}
         footer={
           <div style={ellipsis}>
             <Icon name={stateMap[coordinator.state.zoneState]} />
             <strong>&nbsp; - &nbsp;</strong>
-            {this.titleOrTV(coordinator.state.currentTrack)}
+            {track}
           </div>
         }
       >
         <ListGroup>
           {members.map(member =>
-            <ListGroupItem key={member.uuid}>{member.roomName}</ListGroupItem>
+            <ListGroupItem key={member.uuid}>
+              <Button className="pull-right" bsStyle="info" bsSize="xs">Group</Button>
+              {member.roomName}
+            </ListGroupItem>
           )}
         </ListGroup>
       </Panel>

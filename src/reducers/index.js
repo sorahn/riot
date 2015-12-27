@@ -2,12 +2,34 @@ import { combineReducers } from 'redux'
 import { SELECT_ZONE,
   REQUEST_ZONES, RECEIVE_ZONES,
   REQUEST_FAVORITES, RECEIVE_FAVORITES,
+  HOVER_ZONE, HOVER_OFF_ZONE
 } from '../actions'
 
-function selectedZone(state = {}, action) {
+function hoveredZone(state = {
+  name: ''
+}, action) {
+  switch (action.type) {
+    case HOVER_ZONE:
+      return Object.assign({}, state, {
+        name: action.name
+      })
+
+    case HOVER_OFF_ZONE:
+      return Object.assign({}, state, {
+        name: ''
+      })
+
+    default:
+      return state
+  }
+}
+
+function selectedZone(state = {
+  name: ''
+}, action) {
   switch (action.type) {
     case SELECT_ZONE:
-      return Object.assign({}, {
+      return Object.assign({}, state, {
         name: action.name
       })
 
@@ -17,9 +39,10 @@ function selectedZone(state = {}, action) {
         return state
       }
 
-      return Object.assign({}, {
+      return Object.assign({}, state, {
         name: action.zones[0].coordinator.roomName
       })
+
     default:
       return state
   }
@@ -27,7 +50,6 @@ function selectedZone(state = {}, action) {
 
 function zonesByGroup(state = {
   isFetching: true,
-  selectedZone: '',
   zones: [],
 }, action) {
   switch (action.type) {
@@ -68,6 +90,7 @@ function availableFavorites(state = {
 const rootReducer = combineReducers({
   zonesByGroup,
   selectedZone,
+  hoveredZone,
   availableFavorites
 })
 
