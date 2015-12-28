@@ -39,29 +39,41 @@ export default class Zone extends Component {
       >
         <ListGroup>
           {members.map(member => {
-            const lsiStyle = requesting.name ?
-              requesting.name === member.roomName ? 'warning' : 'success'
+            const isRequesting = !!requesting
+            const lsiStyle = isRequesting ?
+              requesting === member.roomName ? 'warning' : 'success'
               : null
 
+            const groupButton = !isRequesting ? (
+              <Button
+                className="pull-right"
+                bsStyle="info"
+                bsSize="xs"
+                onClick={e => {
+                  e.preventDefault()
+                  this.props.requestNewGroup(member.roomName)
+                }}>
+                Group
+              </Button>
+            ) : null
+
+            const cancelButton = isRequesting ? requesting === member.roomName ? (
+              <Button
+                className="pull-right"
+                bsStyle="danger"
+                bsSize="xs"
+                onClick={e => {
+                  e.preventDefault()
+                  this.props.cancelRequestNewGroup(member.roomName)
+                }}>
+                Cancel
+              </Button>
+            ) : null : null
+
             return (
-              <ListGroupItem
-                key={member.uuid}
-                bsStyle={lsiStyle} >
-
-                <Button
-                  className="pull-right"
-                  bsStyle="info"
-                  bsSize="xs"
-                  onClick={e => {
-                    e.preventDefault()
-                    this.props.requestNewGroup({
-                      name: member.roomName,
-                      type: 'speaker'
-                    })
-                  }}>
-
-                  Group
-                </Button>
+              <ListGroupItem key={member.uuid} bsStyle={lsiStyle} >
+                {groupButton}
+                {cancelButton}
                 {member.roomName}
               </ListGroupItem>
             )

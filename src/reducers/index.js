@@ -2,15 +2,14 @@ import { combineReducers } from 'redux'
 import { SELECT_ZONE,
   REQUEST_ZONES, RECEIVE_ZONES,
   REQUEST_FAVORITES, RECEIVE_FAVORITES,
-  HOVER_ZONE, HOVER_OFF_ZONE, REQUEST_NEW_ZONE
+  HOVER_ZONE, HOVER_OFF_ZONE,
+  REQUEST_NEW_ZONE, CANCEL_REQUEST_NEW_ZONE
 } from '../actions'
 
-function requestingZone(state = {
-  name: '',
-  type: ''
-}, action) {
+function requestingZone(state = '', action) {
   switch (action.type) {
-    case REQUEST_NEW_ZONE: return action.request
+    case REQUEST_NEW_ZONE: return action.name
+    case CANCEL_REQUEST_NEW_ZONE: return ''
     default: return state
   }
 }

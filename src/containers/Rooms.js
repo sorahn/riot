@@ -4,7 +4,8 @@ import { Panel } from 'react-bootstrap'
 
 import {
   fetchZonesIfNeeded, selectZone,
-  hoverZone, hoverOffZone, requestNewZone
+  hoverZone, hoverOffZone,
+  requestNewZone, cancelRequestNewZone
 } from '../actions'
 
 import Zone from '../components/Zone'
@@ -33,7 +34,8 @@ export class Rooms extends React.Component {
             handleClick={() => dispatch(selectZone(zone.coordinator.roomName))}
             handleMouseEnter={() => dispatch(hoverZone(zone.coordinator.roomName))}
             handleMouseLeave={() => dispatch(hoverOffZone(zone.coordinator.roomName))}
-            requestNewGroup={request => dispatch(requestNewZone(request))}
+            requestNewGroup={name => dispatch(requestNewZone(name))}
+            cancelRequestNewGroup={() => dispatch(cancelRequestNewZone())}
             hovering={this.props.hoveredZone}
             selected={this.props.selectedZone}
             requesting={this.props.requestingZone}
@@ -57,7 +59,7 @@ function mapStateToProps(state) {
     zones,
     hoveredZone,
     selectedZone,
-    requestingZone
+    requestingZone,
   }
 }
 
