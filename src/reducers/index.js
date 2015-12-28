@@ -1,77 +1,76 @@
 import { combineReducers } from 'redux'
-import { SELECT_ZONE,
-  REQUEST_ZONES, RECEIVE_ZONES,
+import ZoneReducers from './ZoneReducers'
+
+import {
   REQUEST_FAVORITES, RECEIVE_FAVORITES,
-  HOVER_ZONE, HOVER_OFF_ZONE,
-  REQUEST_NEW_ZONE, CANCEL_REQUEST_NEW_ZONE
 } from '../actions'
 
-function requestingZone(state = {
-  name: '',
-  coordinator: ''
-}, action) {
-  switch (action.type) {
-    case REQUEST_NEW_ZONE:
-      return Object.assign({}, state, {
-        name: action.name,
-        coordinator: action.coordinator
-      })
+// function requestingZone(state = {
+//   name: '',
+//   coordinator: ''
+// }, action) {
+//   switch (action.type) {
+//     case START_CHANGE_REQUEST:
+//       return Object.assign({}, state, {
+//         name: action.name,
+//         coordinator: action.coordinator
+//       })
 
-    case CANCEL_REQUEST_NEW_ZONE:
-      return Object.assign({}, state, {
-        name: '',
-        coordinator: ''
-      })
+//     case END_CHANGE_REQUEST:
+//       return Object.assign({}, state, {
+//         name: '',
+//         coordinator: ''
+//       })
 
-    default: return state
-  }
-}
+//     default: return state
+//   }
+// }
 
-function hoveredZone(state = '', action) {
-  switch (action.type) {
-    case HOVER_ZONE: return action.name
-    case HOVER_OFF_ZONE: return ''
+// function hoveredZone(state = '', action) {
+//   switch (action.type) {
+//     case HOVER_ZONE: return action.name
+//     case HOVER_OFF_ZONE: return ''
 
-    default: return state
-  }
-}
+//     default: return state
+//   }
+// }
 
-function selectedZone(state = '', action) {
-  switch (action.type) {
-    case SELECT_ZONE: return action.name
-    case RECEIVE_ZONES:
-      if (state.name) {
-        return state
-      }
-      return action.zones[0].coordinator.roomName
+// function selectedZone(state = '', action) {
+//   switch (action.type) {
+//     case SELECT_ZONE: return action.name
+//     case RECEIVE_ZONES:
+//       if (state.name) {
+//         return state
+//       }
+//       return action.zones[0].coordinator.roomName
 
-    default: return state
-  }
-}
+//     default: return state
+//   }
+// }
 
-function zonesByGroup(state = {
-  isFetching: true,
-  zones: [],
-}, action) {
-  switch (action.type) {
-    case REQUEST_ZONES: return Object.assign({}, state, { isFetching: true })
-    case RECEIVE_ZONES:
-      return Object.assign({}, state, {
-        isFetching: false,
-        zones: action.zones,
-        lastUpdated: action.receivedAt
-      })
+// function zonesByGroup(state = {
+//   isFetching: true,
+//   zones: [],
+// }, action) {
+//   switch (action.type) {
+//     case REQUEST_ZONES: return Object.assign({}, state, { isFetching: true })
+//     case RECEIVE_ZONES:
+//       return Object.assign({}, state, {
+//         isFetching: false,
+//         zones: action.zones,
+//         lastUpdated: action.receivedAt
+//       })
 
-    case 'SEND_TO_EXISTING_ZONE':
-    case 'LEAVE_ZONES':
-      return Object.assign({}, state, {
-        isFetching: true
-      })
+//     case 'JOIN_ZONE':
+//     case 'LEAVE_ZONES':
+//       return Object.assign({}, state, {
+//         isFetching: true
+//       })
 
 
-    default: return state
-  }
-}
+//     default: return state
+//   }
+// }
 
 function availableFavorites(state = {
   isFetchingFavorites: true,
@@ -93,10 +92,7 @@ function availableFavorites(state = {
 }
 
 const rootReducer = combineReducers({
-  zonesByGroup,
-  selectedZone,
-  hoveredZone,
-  requestingZone,
+  ZoneReducers,
   availableFavorites
 })
 

@@ -1,29 +1,34 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { Panel } from 'react-bootstrap'
+import { Panel, Alert } from 'react-bootstrap'
 
 import {
-  fetchZonesIfNeeded, selectZone,
-  hoverZone, hoverOffZone,
-  requestNewZone, cancelRequestNewZone,
-  sendToExistingZone, leaveZones
-} from '../actions'
+  fetchZones, selectZone, leaveZone, changeZone,
+  setHoverTarget, removeHoverTarget,
+  startChangeRequest, endChangeRequest,
+} from '../actions/ZoneActions'
+
+// import {
+//   hoverZone, hoverOffZone,
+//   requestNewZone, cancelRequestNewZone,
+//   sendToExistingZone, leaveZones
+// } from '../actions'
 
 import Zone from '../components/Zone'
 
 export class Rooms extends React.Component {
   componentDidMount() {
-    this.props.dispatch(fetchZonesIfNeeded())
+    this.props.dispatch(fetchZones())
   }
 
   handleClick(name) {
     if (name === null) {
-      this.props.dispatch(leaveZones(this.props.requestingZone.name))
+      this.props.dispatch(leaveZone(this.props.availableZones.requesting))
       return
     }
 
     if (this.props.requestingZone.name !== name) {
-      this.props.dispatch(sendToExistingZone(this.props.requestingZone.name, name))
+      this.props.dispatch(changeZone(this.props.availableZones.requesting, name))
       return
     }
 
@@ -31,37 +36,43 @@ export class Rooms extends React.Component {
   }
 
   render() {
-    const { isFetching, zones, dispatch } = this.props
+    const { dispatch, zoneChangeRequest, availableZones: { selected, hovering, fetching, zones }} = this.props
 
     return (
       <Panel header={<h3>Rooms</h3>} bsStyle="primary">
-        {isFetching && zones.length === 0 &&
-          <h2>Loading...</h2>
+        {fetching && zones.length === 0 &&
+          <Alert bsStyle="info">
+            <p>Loading Zones...</p>
+          </Alert>
         }
 
-        {!isFetching && zones.length === 0 &&
-          <h2>Empty.</h2>
+        {!fetching && zones.length === 0 &&
+          <Alert bsStyle="danger">
+            <p>No SONOS Zones discovered.</p>
+          </Alert>
         }
 
-        {isFetching && zones.length > 0 &&
-          <h2>Refreshing.</h2>
+        {fetching && zones.length > 0 &&
+          <Alert bsStyle="info">
+            <p>Refreshing Zones...</p>
+          </Alert>
         }
 
         {zones.map(zone =>
           <Zone
             zone={zone}
-            handleClick={() => this.handleClick(zone.coordinator.roomName)}
-            handleMouseEnter={() => dispatch(hoverZone(zone.coordinator.roomName))}
-            handleMouseLeave={() => dispatch(hoverOffZone(zone.coordinator.roomName))}
-            requestNewGroup={name => dispatch(requestNewZone(name))}
-            cancelRequestNewGroup={() => dispatch(cancelRequestNewZone())}
-            hovering={this.props.hoveredZone}
-            selected={this.props.selectedZone}
-            requesting={this.props.requestingZone}
+            handleClick={name => this.handleClick(name)}
+            handleMouseEnter={name => dispatch(setHoverTarget(name))}
+            handleMouseLeave={name => dispatch(removeHoverTarget(name))}
+            startChangeRequest={name => dispatch(startChangeRequest(name))}
+            endChangeRequest={() => dispatch(endChangeRequest())}
+            hovering={hovering}
+            selected={selected}
+            request={zoneChangeRequest}
             key={zone.coordinator.uuid} />
         )}
 
-        {!!this.props.requestingZone.name &&
+        {!!this.props.zoneChangeRequest.speaker &&
           <Panel bsStyle="success" header={<h3>New Zone</h3>}
             onClick={() => this.handleClick(null)}>
             Click here to create a new zone.
@@ -77,15 +88,11 @@ Rooms.propTypes = {
 }
 
 function mapStateToProps(state) {
-  const { selectedZone, hoveredZone, requestingZone,
-    zonesByGroup: { zones, isFetching } } = state
+  const { ZoneReducers: { availableZones, zoneChangeRequest } } = state
 
   return {
-    isFetching,
-    zones,
-    hoveredZone,
-    selectedZone,
-    requestingZone,
+    availableZones,
+    zoneChangeRequest
   }
 }
 

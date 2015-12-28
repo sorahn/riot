@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { fetchFavoritesIfNeeded } from '../actions'
@@ -59,17 +59,17 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
-  selectedZone: PropTypes.string.isRequired,
-  dispatch: PropTypes.func.isRequired
-}
+// App.propTypes = {
+//   selectedZone: PropTypes.string.isRequired,
+//   dispatch: PropTypes.func.isRequired
+// }
 
 function mapStateToProps(state) {
-  const { selectedZone, availableFavorites } = state
+  const { availableFavorites, ZoneReducers: { availableZones: { selected } } } = state
   const { favorites, isFetchingFavorites } = availableFavorites
 
   return {
-    selectedZone,
+    selectedZone: selected,
     isFetchingFavorites,
     favorites
   }
