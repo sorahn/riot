@@ -10,6 +10,7 @@ function requestingZone(state = '', action) {
   switch (action.type) {
     case REQUEST_NEW_ZONE: return action.name
     case CANCEL_REQUEST_NEW_ZONE: return ''
+    case RECEIVE_ZONES: return ''
     default: return state
   }
 }

@@ -9,6 +9,7 @@ export const HOVER_ZONE = 'HOVER_ZONE'
 export const HOVER_OFF_ZONE = 'HOVER_OFF_ZONE'
 export const REQUEST_NEW_ZONE = 'REQUEST_NEW_ZONE'
 export const CANCEL_REQUEST_NEW_ZONE = 'CANCEL_REQUEST_NEW_ZONE'
+export const SEND_TO_EXISTING_ZONE = 'SEND_TO_EXISTING_ZONE'
 
 const SONOS_API = 'http://xbmcs-mac-mini.local:5005'
 
@@ -28,8 +29,12 @@ function requestZones() {
   return { type: REQUEST_ZONES }
 }
 
-function requestFavorites() {
-  return { type: REQUEST_FAVORITES }
+function receiveZones(json) {
+  return {
+    type: RECEIVE_ZONES,
+    zones: json,
+    receivedAt: Date.now()
+  }
 }
 
 export function requestNewZone(name) {
@@ -40,27 +45,40 @@ export function cancelRequestNewZone() {
   return { type: CANCEL_REQUEST_NEW_ZONE }
 }
 
-function receiveZones(json) {
-  return {
-    type: RECEIVE_ZONES,
-    zones: json,
-    receivedAt: Date.now()
+
+function fetchZones() {
+  return dispatch => {
+    dispatch(requestZones())
+    return fetch(`${SONOS_API}/zones`)
+      .then(response => response.json())
+      .then(json => dispatch(receiveZones(json)))
   }
+}
+
+export function leaveZones(source) {
+  return dispatch => {
+    dispatch({ type: 'LEAVE_ZONES', source })
+    return fetch(`${SONOS_API}/${source}/leave`)
+    .catcn(setTimeout(() => dispatch(fetchZones()), 2000))
+  }
+}
+
+export function sendToExistingZone(source, target) {
+  return dispatch => {
+    dispatch({ type: SEND_TO_EXISTING_ZONE, source, target })
+    return fetch(`${SONOS_API}/${source}/join/${target}`)
+      .catch(setTimeout(() => dispatch(fetchZones()), 2000))
+  }
+}
+
+function requestFavorites() {
+  return { type: REQUEST_FAVORITES }
 }
 
 function receiveFavorites(json) {
   return {
     type: RECEIVE_FAVORITES,
     favorites: json
-  }
-}
-
-function fetchPosts() {
-  return dispatch => {
-    dispatch(requestZones())
-    return fetch(`${SONOS_API}/zones`)
-      .then(response => response.json())
-      .then(json => dispatch(receiveZones(json)))
   }
 }
 
@@ -92,7 +110,7 @@ function shouldFetchFavorites({availableFavorites: {favorites}}) {
 export function fetchZonesIfNeeded() {
   return (dispatch, getState) => {
     if (shouldFetchZones(getState())) {
-      return dispatch(fetchPosts())
+      return dispatch(fetchZones())
     }
   }
 }

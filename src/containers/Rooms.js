@@ -5,7 +5,8 @@ import { Panel } from 'react-bootstrap'
 import {
   fetchZonesIfNeeded, selectZone,
   hoverZone, hoverOffZone,
-  requestNewZone, cancelRequestNewZone
+  requestNewZone, cancelRequestNewZone,
+  sendToExistingZone, leaveZones
 } from '../actions'
 
 import Zone from '../components/Zone'
@@ -13,6 +14,20 @@ import Zone from '../components/Zone'
 export class Rooms extends React.Component {
   componentDidMount() {
     this.props.dispatch(fetchZonesIfNeeded())
+  }
+
+  handleClick(name) {
+    if (name === null) {
+      this.props.dispatch(leaveZones(this.props.requestingZone))
+      return
+    }
+
+    if (this.props.requestingZone !== name) {
+      this.props.dispatch(sendToExistingZone(this.props.requestingZone, name))
+      return
+    }
+
+    this.props.dispatch(selectZone(name))
   }
 
   render() {
@@ -31,7 +46,7 @@ export class Rooms extends React.Component {
         {zones.map(zone =>
           <Zone
             zone={zone}
-            handleClick={() => dispatch(selectZone(zone.coordinator.roomName))}
+            handleClick={() => this.handleClick(zone.coordinator.roomName)}
             handleMouseEnter={() => dispatch(hoverZone(zone.coordinator.roomName))}
             handleMouseLeave={() => dispatch(hoverOffZone(zone.coordinator.roomName))}
             requestNewGroup={name => dispatch(requestNewZone(name))}
@@ -41,6 +56,13 @@ export class Rooms extends React.Component {
             requesting={this.props.requestingZone}
             key={zone.coordinator.uuid} />
         )}
+
+        {!!this.props.requestingZone &&
+          <Panel bsStyle="success" header={<h3>New Zone</h3>}
+            onClick={() => this.handleClick(null)}>
+            Click here to create a new zone.
+          </Panel>
+        }
       </Panel>
     )
   }
