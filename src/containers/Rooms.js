@@ -1,40 +1,29 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { Panel, Alert } from 'react-bootstrap'
-
-import {
-  fetchZones, selectZone, leaveZone, changeZone,
-  setHoverTarget, removeHoverTarget,
-  startChangeRequest, endChangeRequest,
-} from '../actions/ZoneActions'
-
-// import {
-//   hoverZone, hoverOffZone,
-//   requestNewZone, cancelRequestNewZone,
-//   sendToExistingZone, leaveZones
-// } from '../actions'
+import * as ZA from '../actions/ZoneActions'
 
 import Zone from '../components/Zone'
 
 export class Rooms extends React.Component {
   componentDidMount() {
-    this.props.dispatch(fetchZones())
+    this.props.dispatch(ZA.fetchZones())
   }
 
   handleClick(zone) {
     const zcr = this.props.zoneChangeRequest
 
     if (zone === null) {
-      this.props.dispatch(leaveZone(zcr.speaker))
+      this.props.dispatch(ZA.leaveZone(zcr.speaker))
       return
     }
 
     if (zcr.zone !== zone) {
-      this.props.dispatch(changeZone(zcr.speaker, zone))
+      this.props.dispatch(ZA.changeZone(zcr.speaker, zone))
       return
     }
 
-    this.props.dispatch(selectZone(name))
+    this.props.dispatch(ZA.selectZone(name))
   }
 
   render() {
@@ -64,10 +53,10 @@ export class Rooms extends React.Component {
           <Zone
             zone={zone}
             handleClick={name => this.handleClick(name)}
-            handleMouseEnter={name => dispatch(setHoverTarget(name))}
-            handleMouseLeave={name => dispatch(removeHoverTarget(name))}
-            startChangeRequest={name => dispatch(startChangeRequest(name))}
-            endChangeRequest={() => dispatch(endChangeRequest())}
+            handleMouseEnter={name => dispatch(ZA.setHoverTarget(name))}
+            handleMouseLeave={name => dispatch(ZA.removeHoverTarget(name))}
+            startChangeRequest={name => dispatch(ZA.startChangeRequest(name))}
+            endChangeRequest={() => dispatch(ZA.endChangeRequest())}
             hovering={hovering}
             selected={selected}
             request={zoneChangeRequest}

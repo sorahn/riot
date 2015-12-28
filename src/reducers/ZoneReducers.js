@@ -12,7 +12,7 @@ function availableZones(state = {
     case ZA.LEAVE_ZONE:
     case ZA.REQUEST_ZONES:
       return Object.assign({}, state, {
-        isFetching: true
+        fetching: true
       })
 
     case ZA.RECEIVE_ZONES:
