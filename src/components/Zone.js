@@ -12,14 +12,14 @@ export default class Zone extends Component {
   render() {
     const { requesting, zone: { coordinator, members }} = this.props
     const track = /spdif/.test(coordinator.state.currentTrack.uri) ? 'TV' : coordinator.state.currentTrack.title
-    const isRequesting = !!requesting
+    const isRequesting = !!requesting.coordinator
     const ellipsis = {
       overflow: 'hidden',
       textOverflow: 'ellipsis',
       whiteSpace: 'nowrap'
     }
 
-    const bsStyle = isRequesting ? requesting !== coordinator.roomName ? 'success' : 'default' : 'default'
+    const bsStyle = isRequesting ? requesting.coordinator !== coordinator.roomName ? 'success' : 'default' : 'default'
 
     return (
       <Panel
@@ -37,7 +37,7 @@ export default class Zone extends Component {
       >
         <ListGroup>
           {members.map(member => {
-            const lsiStyle = isRequesting ? requesting === member.roomName ? 'info' : null : null
+            const lsiStyle = isRequesting ? requesting.name === member.roomName ? 'info' : null : null
 
             const groupButton = !isRequesting ? (
               <Button
@@ -47,13 +47,16 @@ export default class Zone extends Component {
                 onClick={e => {
                   e.preventDefault()
                   e.stopPropagation()
-                  this.props.requestNewGroup(member.roomName)
+                  this.props.requestNewGroup({
+                    name: member.roomName,
+                    coordinator: coordinator.roomName
+                  })
                 }}>
                 Group
               </Button>
             ) : null
 
-            const cancelButton = isRequesting ? requesting === member.roomName ? (
+            const cancelButton = isRequesting ? requesting.name === member.roomName ? (
               <Button
                 className="pull-right"
                 bsStyle="danger"
@@ -61,7 +64,7 @@ export default class Zone extends Component {
                 onClick={e => {
                   e.preventDefault()
                   e.stopPropagation()
-                  this.props.cancelRequestNewGroup(member.roomName)
+                  this.props.cancelRequestNewGroup()
                 }}>
                 Cancel
               </Button>

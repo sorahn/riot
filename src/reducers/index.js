@@ -6,11 +6,23 @@ import { SELECT_ZONE,
   REQUEST_NEW_ZONE, CANCEL_REQUEST_NEW_ZONE
 } from '../actions'
 
-function requestingZone(state = '', action) {
+function requestingZone(state = {
+  name: '',
+  coordinator: ''
+}, action) {
   switch (action.type) {
-    case REQUEST_NEW_ZONE: return action.name
-    case CANCEL_REQUEST_NEW_ZONE: return ''
-    case RECEIVE_ZONES: return ''
+    case REQUEST_NEW_ZONE:
+      return Object.assign({}, state, {
+        name: action.name,
+        coordinator: action.coordinator
+      })
+
+    case CANCEL_REQUEST_NEW_ZONE:
+      return Object.assign({}, state, {
+        name: '',
+        coordinator: ''
+      })
+
     default: return state
   }
 }
@@ -49,6 +61,13 @@ function zonesByGroup(state = {
         zones: action.zones,
         lastUpdated: action.receivedAt
       })
+
+    case 'SEND_TO_EXISTING_ZONE':
+    case 'LEAVE_ZONES':
+      return Object.assign({}, state, {
+        isFetching: true
+      })
+
 
     default: return state
   }

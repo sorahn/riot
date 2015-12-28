@@ -15,14 +15,20 @@
 	"folders":
 	[
 		{
-			"path": ".",
-      "folder_exclude_patterns":
-      [
-        "build"
-      ]
+			"folder_exclude_patterns":
+			[
+				"build"
+			],
+			"path": "."
 		},
 		{
 			"path": "/Users/darylr/Github/redux"
+		},
+		{
+			"path": "/Users/darylr/Github/node-sonos-web-controller"
+		},
+		{
+			"path": "/Users/darylr/Github/node-sonos-discovery"
 		}
 	]
 }

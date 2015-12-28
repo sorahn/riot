@@ -37,8 +37,8 @@ function receiveZones(json) {
   }
 }
 
-export function requestNewZone(name) {
-  return { type: REQUEST_NEW_ZONE, name }
+export function requestNewZone({name, coordinator}) {
+  return { type: REQUEST_NEW_ZONE, name, coordinator }
 }
 
 export function cancelRequestNewZone() {
@@ -59,7 +59,10 @@ export function leaveZones(source) {
   return dispatch => {
     dispatch({ type: 'LEAVE_ZONES', source })
     return fetch(`${SONOS_API}/${source}/leave`)
-    .catcn(setTimeout(() => dispatch(fetchZones()), 2000))
+    .catch(setTimeout(() => {
+      dispatch(fetchZones())
+      dispatch(cancelRequestNewZone())
+    }, 2000))
   }
 }
 
@@ -67,7 +70,10 @@ export function sendToExistingZone(source, target) {
   return dispatch => {
     dispatch({ type: SEND_TO_EXISTING_ZONE, source, target })
     return fetch(`${SONOS_API}/${source}/join/${target}`)
-      .catch(setTimeout(() => dispatch(fetchZones()), 2000))
+      .catch(setTimeout(() => {
+        dispatch(fetchZones())
+        dispatch(cancelRequestNewZone())
+      }, 2000))
   }
 }
 

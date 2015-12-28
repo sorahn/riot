@@ -18,12 +18,12 @@ export class Rooms extends React.Component {
 
   handleClick(name) {
     if (name === null) {
-      this.props.dispatch(leaveZones(this.props.requestingZone))
+      this.props.dispatch(leaveZones(this.props.requestingZone.name))
       return
     }
 
-    if (this.props.requestingZone !== name) {
-      this.props.dispatch(sendToExistingZone(this.props.requestingZone, name))
+    if (this.props.requestingZone.name !== name) {
+      this.props.dispatch(sendToExistingZone(this.props.requestingZone.name, name))
       return
     }
 
@@ -43,6 +43,10 @@ export class Rooms extends React.Component {
           <h2>Empty.</h2>
         }
 
+        {isFetching && zones.length > 0 &&
+          <h2>Refreshing.</h2>
+        }
+
         {zones.map(zone =>
           <Zone
             zone={zone}
@@ -57,7 +61,7 @@ export class Rooms extends React.Component {
             key={zone.coordinator.uuid} />
         )}
 
-        {!!this.props.requestingZone &&
+        {!!this.props.requestingZone.name &&
           <Panel bsStyle="success" header={<h3>New Zone</h3>}
             onClick={() => this.handleClick(null)}>
             Click here to create a new zone.
