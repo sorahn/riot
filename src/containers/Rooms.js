@@ -21,14 +21,16 @@ export class Rooms extends React.Component {
     this.props.dispatch(fetchZones())
   }
 
-  handleClick(name) {
-    if (name === null) {
-      this.props.dispatch(leaveZone(this.props.availableZones.requesting))
+  handleClick(zone) {
+    const zcr = this.props.zoneChangeRequest
+
+    if (zone === null) {
+      this.props.dispatch(leaveZone(zcr.speaker))
       return
     }
 
-    if (this.props.requestingZone.name !== name) {
-      this.props.dispatch(changeZone(this.props.availableZones.requesting, name))
+    if (zcr.zone !== zone) {
+      this.props.dispatch(changeZone(zcr.speaker, zone))
       return
     }
 
@@ -72,7 +74,7 @@ export class Rooms extends React.Component {
             key={zone.coordinator.uuid} />
         )}
 
-        {!!this.props.zoneChangeRequest.speaker &&
+        {!!zoneChangeRequest.speaker &&
           <Panel bsStyle="success" header={<h3>New Zone</h3>}
             onClick={() => this.handleClick(null)}>
             Click here to create a new zone.
