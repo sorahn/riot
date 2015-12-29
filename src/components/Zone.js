@@ -22,10 +22,21 @@ export default class Zone extends Component {
 
     const bsStyle = isRequesting ? request.zone !== roomName ? 'success' : 'default' : 'default'
 
+    const muteButton = isHovering ? (
+      <Button className="pull-right" bsStyle="danger" bsSize="xs">
+        <Icon name="volume-off" fixedWidth></Icon>
+      </Button>
+    ) : null
+
     return (
       <Panel
         key={coordinator.uuid}
-        header={<h3>{roomName}</h3>}
+        header={
+          <div className="clearfix">
+            {muteButton}
+            <h3 className="panel-title">{roomName}</h3>
+          </div>
+        }
         onClick={() => this.props.handleClick(roomName)}
         onMouseEnter={() => this.props.handleMouseEnter(roomName)}
         onMouseLeave={() => this.props.handleMouseLeave(roomName)}

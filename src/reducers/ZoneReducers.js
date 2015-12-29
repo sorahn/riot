@@ -1,5 +1,15 @@
 import { combineReducers } from 'redux'
-import * as ZA from '../actions/ZoneActions'
+import {
+  JOIN_ZONE,
+  LEAVE_ZONE,
+  REQUEST_ZONES,
+  RECEIVE_ZONES,
+  SELECT_ZONE,
+  SET_HOVER_TARGET,
+  REMOVE_HOVER_TARGET,
+  START_CHANGE_REQUEST,
+  END_CHANGE_REQUEST
+} from '../actions/ZoneActions'
 
 function availableZones(state = {
   fetching: true,
@@ -8,14 +18,14 @@ function availableZones(state = {
   zones: []
 }, action) {
   switch (action.type) {
-    case ZA.JOIN_ZONE:
-    case ZA.LEAVE_ZONE:
-    case ZA.REQUEST_ZONES:
+    case JOIN_ZONE:
+    case LEAVE_ZONE:
+    case REQUEST_ZONES:
       return Object.assign({}, state, {
         fetching: true
       })
 
-    case ZA.RECEIVE_ZONES:
+    case RECEIVE_ZONES:
       return Object.assign({}, state, {
         fetching: false,
         selected: !!state.selected ? state.selected : action.zones[0].coordinator.roomName,
@@ -23,17 +33,17 @@ function availableZones(state = {
         lastUpdated: action.receivedAt
       })
 
-    case ZA.SELECT_ZONE:
+    case SELECT_ZONE:
       return Object.assign({}, state, {
         selected: action.name
       })
 
-    case ZA.SET_HOVER_TARGET:
+    case SET_HOVER_TARGET:
       return Object.assign({}, state, {
         hovering: action.name
       })
 
-    case ZA.REMOVE_HOVER_TARGET:
+    case REMOVE_HOVER_TARGET:
       return Object.assign({}, state, {
         hovering: ''
       })
@@ -47,13 +57,13 @@ function zoneChangeRequest(state = {
   zone: ''
 }, {type, speaker, zone}) {
   switch (type) {
-    case ZA.START_CHANGE_REQUEST:
+    case START_CHANGE_REQUEST:
       return Object.assign({}, state, {
         speaker,
         zone
       })
 
-    case ZA.END_CHANGE_REQUEST:
+    case END_CHANGE_REQUEST:
       return Object.assign({}, state, {
         speaker: '',
         zone: ''

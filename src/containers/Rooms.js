@@ -18,7 +18,7 @@ export class Rooms extends React.Component {
       return
     }
 
-    if (zcr.zone !== zone) {
+    if (!!zcr.zone && zcr.zone !== zone) {
       this.props.dispatch(ZA.changeZone(zcr.speaker, zone))
       return
     }
