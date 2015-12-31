@@ -32,6 +32,15 @@
 		},
 		{
 			"path": "/Users/darylr/Github/node-sonos-http-api"
+		},
+		{
+			"path": "/Users/darylr/Github/riot-dashboard"
+		},
+		{
+			"path": "/Users/darylr/src/schnauzer"
+		},
+		{
+			"path": "/Users/darylr/src/react-join"
 		}
 	]
 }

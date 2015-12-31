@@ -1,3 +1,5 @@
+import fetch from 'isomorphic-fetch'
+
 import { SONOS_API } from './index'
 
 export const SELECT_ZONE = 'SELECT_ZONE'
