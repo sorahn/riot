@@ -5,6 +5,7 @@ import { fetchFavoritesIfNeeded } from '../actions'
 
 import Rooms from '../containers/Rooms'
 import Favorites from '../components/Favorites'
+import Lifx from '../containers/lifx'
 
 import { Grid, Col, Navbar, Panel } from 'react-bootstrap'
 
@@ -38,6 +39,7 @@ class App extends Component {
               {selectedZone &&
                 <h2>{selectedZone}</h2>
               }
+              <Lifx />
             </Panel>
           </Col>
           <Col sm={4}>

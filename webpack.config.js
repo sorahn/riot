@@ -13,6 +13,9 @@ export default {
     path: path.join(__dirname, 'build'),
     filename: 'riot.js'
   },
+  externals: {
+    'socket.io': 'io'
+  },
   module: {
     preLoaders: [
       { test: /\.js$/, loader: 'eslint-loader', exclude: /node_modules/ }
